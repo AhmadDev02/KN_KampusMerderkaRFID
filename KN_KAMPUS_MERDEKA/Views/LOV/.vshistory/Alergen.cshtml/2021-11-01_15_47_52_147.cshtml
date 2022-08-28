@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "PILIH ALERGEN";
+    Layout = "~/Views/Shared/_LayoutLOV.cshtml";
+}
+
+
+@using (Html.BeginForm("Index", "Alergen", FormMethod.Post, new { id = "frm" }))
+{
+    @Html.AntiForgeryToken()
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped" id="myTable">
+                <thead>
+                    <tr>
+                        <th class="text-center">ACTION</th>
+                        <th class="text-center">CODE</th>
+                        <th class="text-center">DESC</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyLOV">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- /.row -->
+@section scripts{
+    <script src="~/Assets/js/customs/systems/LOV/alergen.LOV.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+}

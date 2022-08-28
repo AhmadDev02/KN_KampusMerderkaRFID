@@ -1,0 +1,55 @@
+﻿@using KN2021_E_Competency.Common
+@using KN2021_E_Competency.Common.Entity
+@using KN2021_E_Competency.MVC
+@*@using KN2020_SmartFactory.MVC.FilterConfig*@
+
+@{
+    ViewBag.Title = "System Language";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+  
+@using (Html.BeginForm("Index", "SystemLanguage", FormMethod.Post, new { id = "frm1"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("txtHiddenObject")
+    @Html.Hidden("txtGUID")
+
+     <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            @ViewBag.Title
+            <small> @ViewBag.Title </small>
+        </h1> 
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <!-- left column -->
+            @*<div class="col-md-6">*@
+            <!-- general form elements -->
+            <div class="box box-success">
+                <div class="box-header with-border text-right">
+                    <a id="btnSave" class="btn btn-success"><i class="fa fa-floppy-o"></i> Save</a>
+                    <a id="btnNew" class="btn btn-warning"><i class="fa fa-refresh"></i> New</a>
+                    <a id="btnGenerate" class="btn btn-primary"><i class="fa fa-gear"></i> Generate ALL</a>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+
+            </div>
+            <!-- /.box -->
+
+        </div>
+        <!--/.col (left) -->
+        @*</div>*@
+        <!-- /.row -->
+    </section>
+
+
+    @section scripts
+    {  
+        <script src="~/Scripts/customs/GlobalScript.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+        <script src="~/Scripts/customs/systems/systemlanguage/systemlanguagescript.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+    }     
+}
+ 

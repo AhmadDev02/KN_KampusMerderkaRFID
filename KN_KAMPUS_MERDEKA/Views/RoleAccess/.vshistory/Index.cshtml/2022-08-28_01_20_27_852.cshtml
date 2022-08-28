@@ -1,0 +1,117 @@
+﻿@using KN_KAMPUS_MERDEKA.COMMON
+@using KN_KAMPUS_MERDEKA.COMMON.Entity
+@using KN_KAMPUS_MERDEKA.MVC
+@*@using KN_KAMPUS_MERDEKA.MVC.FilterConfig*@
+
+@{
+    ViewBag.Title = "Master Role Access";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Role Access", FormMethod.Post, new { id = "frmRoleAccess" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("txtHiddenObject")
+    @Html.Hidden("txtGUID")
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            @ViewBag.Title
+            <small> @ViewBag.Title </small>
+        </h1>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <!-- left column -->
+            @*<div class="col-md-6">*@
+            <!-- general form elements -->
+            <div class="box box-success">
+                <div class="box-header with-border text-right">
+                    <a id="btnSave" class="btn btn-success"><i class="fa fa-floppy-o"></i> Save</a>
+                    <a id="btnNew" class="btn btn-warning"><i class="fa fa-refresh"></i> New</a>
+                    <a id="btnDelete" class="btn btn-danger" style="display:none;"><i class="fa fa-trash"></i> Delete </a>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label id="lblID" class="col-sm-2 control-label">ID</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-danger" id="btnLOVID"> <i class="fa fa-search"></i></button>
+                                    </div>
+                                    <input type="text" class="form-control" id="txtID" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label id="lblRoleID" style="margin-top:10px" class="col-sm-2 control-label">Role Name</label>
+                            <div class="col-sm-10">
+                                <select class="form-control uppercase" style="margin-top:10px" id="ddlRoleID">
+                                    <option value="0">-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label id="lblModule" style="margin-top:10px" class="col-sm-2 control-label">Module Name</label>
+                            <div class="col-sm-10">
+                                <select style="margin-top:10px" class="form-control" id="ddlModule">
+                                    <option value="0">-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="form-group">
+                            <label id="lblEdit" style="margin-top:10px" class="col-sm-2 control-label">Allow Edit</label>
+                            <div class="col-sm-10">
+                                <input type="checkbox" id="chkEdit" style="margin-top:14px">
+                            </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="form-group">
+                            <label id="lblView" style="margin-top:10px" class="col-sm-2 control-label">Allow View</label>
+                            <div class="col-sm-10">
+                                <input type="checkbox" id="chkView" style="margin-top:14px">
+                            </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="form-group">
+                            <label id="lblDelete" style="margin-top:10px" class="col-sm-2 control-label">Allow Delete</label>
+                            <div class="col-sm-10">
+                                <input type="checkbox" id="chkDelete" style="margin-top:14px">
+                            </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="form-group">
+                            <label id="lblPrint" style="margin-top:10px" class="col-sm-2 control-label">Allow Print</label>
+                            <div class="col-sm-10">
+                                <input type="checkbox" id="chkPrint" style="margin-top:14px">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+
+                    </div>
+                </form>
+            </div>
+            <!-- /.box -->
+
+        </div>
+        <!--/.col (left) -->
+        @*</div>*@
+        <!-- /.row -->
+    </section>
+
+
+    @section scripts
+    {
+        <script src="~/Scripts/customs/GlobalScript.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+        <script src="~/Scripts/customs/systems/roleAccess/roleAccessscript.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+    }
+}

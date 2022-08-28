@@ -1,0 +1,173 @@
+﻿@using KN2021_E_RPS.Common
+@using KN2021_E_RPS.Common.Entity
+@using KN2021_E_RPS.MVC
+
+
+@{
+    ViewBag.Title = "Master User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Index", "User", FormMethod.Post, new { id = "frm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("txtHiddenObject")
+    @Html.Hidden("txtGUID")
+}
+<div class="row" id="userFormRow" style="display: none;">
+    <div class="col-md-6 offset-md-3 col-sm-10 offset-sm-1">
+        <div class="card">
+            <div class="card-header card-outline card-success">
+                <div class="card=title">
+                    <h3 class="card-title">
+                        <i class="fa fa-plus"></i> <span id="userFormTitle">Add User</span>
+                    </h3>
+                    <div class="card-tools">
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" class="form-control" placeholder="Enter username" id="txtUsername">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter Fullname" id="txtFullname">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Nick</label>
+                            <input type="text" class="form-control" placeholder="Enter Nickname" id="txtNick">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>NIK</label>
+                            <input type="text" class="form-control" placeholder="Enter NIK" id="txtEmployeeID">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" placeholder="Enter Email" id="txtEmail">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Enter Password" id="txtPassword">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Active</label>
+                        <div class="form-group">
+                            <label class="switch">
+                                <input type="checkbox" id="bitActive">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Active Directory</label>
+                        <div class="form-group">
+                            <label class="switch">
+                                <input type="checkbox" id="bitUseActiveDirectory">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer ">
+                <button class="btn btn-outline-success  float-right m-1" id="btnSave">
+                    <i class="fa fa-save"></i> Simpan
+                </button>
+                <button class="btn btn-outline-danger  float-right m-1" id="btnCancelAddUser">
+                    <i class="fa fa-chevron-down"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="userTableRow">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-outline card-red">
+                <h3 class="card-title">
+                    <i class="fa fa-stream"></i> @ViewBag.Title
+                </h3>
+                <div class="card-tools">
+                    <button id="btnAddUser" class="btn btn-success">
+                        <i class="fas fa-plus-square"></i> Add
+                    </button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover table-striped" id="tableUser">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID User</th>
+                            <th class="text-center">Username</th>
+                            <th class="text-center">Full Name</th>
+                            <th class="text-center">Nick</th>
+                            <th class="text-center">Nik</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Active</th>
+                            <th class="text-center">Ad</th>
+                            <th class="text-center">Last Login</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                    <li class="page-item"><a class="page-link" id="btnPrev">«</a></li>
+                    <li class="page-item"><a class="page-link" id="btnNext">»</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+
+
+
+<!-- /.row -->
+@section scripts{
+    <script src="~/Assets/js/customs/systems/user/userscript.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+    <script>
+            $(() => {
+                $(".search-bar").append(@Html.Partial("_Search"));
+                $inputSearch = $(".search-bar").find(".search-input");
+                $inputSearch.on('keyup', (e) => {
+                    if ($inputSearch.val().toString().length % 3 == 0 && ($inputSearch.val().toString() != cari || e.key == 'Enter')) {
+                        cari = $inputSearch.val();
+                        searchUser();
+                    }
+
+                })
+            });
+    </script>
+}

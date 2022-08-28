@@ -1,0 +1,7 @@
+﻿//=======================
+// INITIALIZE DATA
+//=======================
+let page = 1;
+let cari = "";
+let pageUser = {};
+let api = "";

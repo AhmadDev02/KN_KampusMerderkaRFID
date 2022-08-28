@@ -1,0 +1,52 @@
+﻿@using KN_KAMPUS_MERDEKA.COMMON.Constant
+<footer class="main-footer" style="padding: 10px 1rem;">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex flex-column">
+            <div>
+                <strong>Copyright &copy; 2022 <a href="http://www.kalbenutritionals.com"> @Configuration.CompanyName </a>.</strong> All rights
+                reserved.
+            </div>
+            <span class="text-muted text-sm d-none d-sm-block"><a href="/Changelog" class="text-muted">Version 1.3.7</a></span>
+        </div>
+        <div class="align-bottom d-none d-sm-inline-block">
+            <div>
+                <label>Dark Mode</label>
+                <label class="switch m-auto">
+                    <input type="checkbox" id="darkSwitch" name="darkSwitch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
+<!-- ./wrapper -->
+
+
+<div id="sidebar-overlay"></div>
+</div>
+<!-- Modal Logout -->
+<div class="modal fade" id="modalLogout" tabindex="-1" role="dialog" aria-labelledby="modalLogoutLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLogoutLabel">Konfirmasi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <span>Apakah anda yakin ingin keluar ?</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <a href="@Url.Action(" LogOff", "Account" )" class="btn btn-primary">Ya</a>
+
+            </div>
+        </div>
+    </div>
+</div>

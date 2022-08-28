@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\New folder\\KN_KAMPUS_MERDEKA\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj": {}
+  },
+  "projects": {
+    "D:\\New folder\\KN_KAMPUS_MERDEKA\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\New folder\\KN_KAMPUS_MERDEKA\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj",
+        "projectName": "KN_KAMPUS_MERDEKA.COMMON",
+        "projectPath": "D:\\New folder\\KN_KAMPUS_MERDEKA\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj",
+        "packagesPath": "C:\\Users\\taras\\.nuget\\packages\\",
+        "outputPath": "D:\\New folder\\KN_KAMPUS_MERDEKA\\KN_KAMPUS_MERDEKA.COMMON\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\taras\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "List of Value";
+}
+
+<div>
+    <h2>List of Value</h2>
+    @if (Model != null)
+    {
+        <table id="tbDataTable" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td>
+                        
+                    </td>
+                    @if (Model.FirstOrDefault().txtColumnName1 != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(m => m.FirstOrDefault().txtColumnName1)
+                        </td>
+                    }
+                    @if (Model.FirstOrDefault().txtColumnName2 != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(m => m.FirstOrDefault().txtColumnName2)
+                        </td>
+                    }
+                    @if (Model.FirstOrDefault().txtColumnName3 != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(m => m.FirstOrDefault().txtColumnName3)
+                        </td>
+                    }
+                    @if (Model.FirstOrDefault().txtColumnName4 != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(m => m.FirstOrDefault().txtColumnName4)
+                        </td>
+                    }
+                    @if (Model.FirstOrDefault().txtColumnName5 != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(m => m.FirstOrDefault().txtColumnName5)
+                        </td>
+                    }
+                    @if (Model.FirstOrDefault().txtColumnName6 != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(m => m.FirstOrDefault().txtColumnName6)
+                        </td>
+                    }
+                    @if (Model.FirstOrDefault().txtColumnName7 != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(m => m.FirstOrDefault().txtColumnName7)
+                        </td>
+                    }
+                    @if (Model.FirstOrDefault().txtColumnName8 != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(m => m.FirstOrDefault().txtColumnName8)
+                        </td>
+                    }
+                    @if (Model.FirstOrDefault().txtColumnName9 != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(m => m.FirstOrDefault().txtColumnName9)
+                        </td>
+                    }
+                    @if (Model.FirstOrDefault().txtColumnName10 != null)
+                    {
+                        <td>
+                            @Html.DisplayFor(m => m.FirstOrDefault().txtColumnName10)
+                        </td>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    for (int x = 0; x <= Model.Count - 1; x++)
+                    {
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="return ReturnLOV('@ViewBag.ParentTextBox','@Model[x].txtColumn1','@Model[x].txtColumn2','@Model[x].txtColumn3','@Model[x].txtColumn4','@Model[x].txtColumn5','@Model[x].txtColumn6','@Model[x].txtColumn7','@Model[x].txtColumn8','@Model[x].txtColumn9','@Model[x].txtColumn10');">Select</button>
+                            </td>
+                            @if (Model[x].txtColumn1 != null)
+                            {
+                                <td>
+                                    @Html.DisplayFor(m => Model[x].txtColumn1)
+                                </td>
+                            }
+                            @if (Model[x].txtColumn2 != null)
+                            {
+                                <td>
+                                    @Html.DisplayFor(m => Model[x].txtColumn2)
+                                </td>
+                            }
+                            @if (Model[x].txtColumn3 != null)
+                            {
+                                <td>
+                                    @Html.DisplayFor(m => Model[x].txtColumn3)
+                                </td>
+                            }
+                            @if (Model[x].txtColumn4 != null)
+                            {
+                                <td>
+                                    @Html.DisplayFor(m => Model[x].txtColumn4)
+                                </td>
+                            }
+                            @if (Model[x].txtColumn5 != null)
+                            {
+                                <td>
+                                    @Html.DisplayFor(m => Model[x].txtColumn5)
+                                </td>
+                            }
+                            @if (Model[x].txtColumn6 != null)
+                            {
+                                <td>
+                                    @Html.DisplayFor(m => Model[x].txtColumn6)
+                                </td>
+                            }
+                            @if (Model[x].txtColumn7 != null)
+                            {
+                                <td>
+                                    @Html.DisplayFor(m => Model[x].txtColumn7)
+                                </td>
+                            }
+                            @if (Model[x].txtColumn8 != null)
+                            {
+                                <td>
+                                    @Html.DisplayFor(m => Model[x].txtColumn8)
+                                </td>
+                            }
+                            @if (Model[x].txtColumn9 != null)
+                            {
+                                <td>
+                                    @Html.DisplayFor(m => Model[x].txtColumn9)
+                                </td>
+                            }
+                            @if (Model[x].txtColumn10 != null)
+                            {
+                                <td>
+                                    @Html.DisplayFor(m => Model[x].txtColumn10)
+                                </td>
+                            }
+                        </tr>
+                    }
+
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        @Html.Label("No data to display")
+    }
+
+    <script>
+        $(document).ready(function () {
+            $('#tbDataTable').DataTable();
+        });
+    </script>
+</div>

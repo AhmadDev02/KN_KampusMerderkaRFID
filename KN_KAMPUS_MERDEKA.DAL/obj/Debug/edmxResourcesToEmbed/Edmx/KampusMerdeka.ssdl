@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KampusMerdekaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="mMenu">
+    <Key>
+      <PropertyRef Name="intMenuID" />
+    </Key>
+    <Property Name="intMenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intParentID" Type="int" />
+    <Property Name="txtMenuName" Type="varchar" MaxLength="50" />
+    <Property Name="txtDescription" Type="varchar" MaxLength="100" />
+    <Property Name="intModuleID" Type="int" />
+    <Property Name="txtLink" Type="varchar" MaxLength="250" />
+    <Property Name="intOrderID" Type="int" />
+    <Property Name="bitActive" Type="bit" />
+    <Property Name="txtIcon" Type="varchar" MaxLength="50" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedDate" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedDate" Type="datetime" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mModule">
+    <Key>
+      <PropertyRef Name="intModuleID" />
+    </Key>
+    <Property Name="intModuleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtModuleName" Type="varchar" MaxLength="100" />
+    <Property Name="txtDescription" Type="varchar" MaxLength="100" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedDate" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedDate" Type="datetime" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mParameter_Detail">
+    <Key>
+      <PropertyRef Name="intParameter_DetailID" />
+    </Key>
+    <Property Name="intParameter_DetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intParameter_HeaderID" Type="int" />
+    <Property Name="txtCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtDesc" Type="varchar" MaxLength="100" />
+    <Property Name="bitActive" Type="bit" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mParameter_Header">
+    <Key>
+      <PropertyRef Name="intParameter_HeaderID" />
+    </Key>
+    <Property Name="intParameter_HeaderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtType" Type="varchar" MaxLength="50" />
+    <Property Name="txtDescription" Type="varchar" MaxLength="200" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="50" />
+    <Property Name="dtmInsertedDate" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="dtmUpdatedDate" Type="datetime" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mRole">
+    <Key>
+      <PropertyRef Name="intRoleID" />
+    </Key>
+    <Property Name="intRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtRoleName" Type="varchar" MaxLength="100" />
+    <Property Name="bitSuperuser" Type="bit" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedDate" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedDate" Type="datetime" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mRoleAccess">
+    <Key>
+      <PropertyRef Name="intRoleAccessID" />
+    </Key>
+    <Property Name="intRoleAccessID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intRoleID" Type="int" />
+    <Property Name="intModuleID" Type="int" />
+    <Property Name="bitEdit" Type="bit" />
+    <Property Name="bitView" Type="bit" />
+    <Property Name="bitDelete" Type="bit" />
+    <Property Name="bitPrint" Type="bit" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedDate" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedDate" Type="datetime" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mSystemConfiguration">
+    <Key>
+      <PropertyRef Name="txtSystemConfigurationID" />
+      <PropertyRef Name="txtKeyID" />
+    </Key>
+    <Property Name="txtSystemConfigurationID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="txtKeyID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="intModuleID" Type="int" />
+    <Property Name="txtDescription" Type="varchar" MaxLength="100" />
+    <Property Name="txtDefaultValue" Type="varchar" MaxLength="250" />
+    <Property Name="txtValue" Type="varchar" MaxLength="250" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedDate" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedDate" Type="datetime" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mSystemLanguage">
+    <Key>
+      <PropertyRef Name="txtSystemLanguageID" />
+      <PropertyRef Name="txtKeyID" />
+      <PropertyRef Name="txtLanguageID" />
+    </Key>
+    <Property Name="txtSystemLanguageID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="txtKeyID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="txtLanguageID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="txtDefaultValue" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="txtValue" Type="varchar" MaxLength="500" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedDate" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedDate" Type="datetime" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mUser">
+    <Key>
+      <PropertyRef Name="intUserID" />
+    </Key>
+    <Property Name="intUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtUserName" Type="varchar" MaxLength="100" />
+    <Property Name="txtFullName" Type="varchar" MaxLength="250" />
+    <Property Name="txtNick" Type="varchar" MaxLength="10" />
+    <Property Name="txtEmpID" Type="varchar" MaxLength="10" />
+    <Property Name="txtEmail" Type="varchar" MaxLength="100" />
+    <Property Name="bitActive" Type="bit" />
+    <Property Name="bitUseActiveDirectory" Type="bit" />
+    <Property Name="txtPassword" Type="varchar" MaxLength="200" />
+    <Property Name="dtmLastLogin" Type="datetime" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedDate" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedDate" Type="datetime" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mUserRole">
+    <Key>
+      <PropertyRef Name="intUserRoleID" />
+    </Key>
+    <Property Name="intUserRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intRoleID" Type="int" Nullable="false" />
+    <Property Name="intUserID" Type="int" Nullable="false" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedDate" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedDate" Type="datetime" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TrDebugEmail">
+    <Key>
+      <PropertyRef Name="intDebugEmailID" />
+    </Key>
+    <Property Name="intDebugEmailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtFrom" Type="varchar" MaxLength="200" />
+    <Property Name="txtTo" Type="varchar" MaxLength="500" />
+    <Property Name="txtCC" Type="varchar" MaxLength="500" />
+    <Property Name="txtBCC" Type="varchar" MaxLength="500" />
+    <Property Name="txtSubject" Type="varchar" MaxLength="200" />
+    <Property Name="txtPriority" Type="varchar" MaxLength="200" />
+    <Property Name="bitIsBodyHTML" Type="smallint" />
+    <Property Name="txtBody" Type="text" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedDate" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedDate" Type="datetime" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="trDebugError">
+    <Key>
+      <PropertyRef Name="txtId" />
+    </Key>
+    <Property Name="txtId" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="txtDebugName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="txtErrorInfo" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="dtmErrorDate" Type="datetime" Nullable="false" />
+    <Property Name="txtStackTrace" Type="text" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__mParamete__intPa__30F848ED">
+    <End Role="mParameter_Header" Type="Self.mParameter_Header" Multiplicity="0..1" />
+    <End Role="mParameter_Detail" Type="Self.mParameter_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mParameter_Header">
+        <PropertyRef Name="intParameter_HeaderID" />
+      </Principal>
+      <Dependent Role="mParameter_Detail">
+        <PropertyRef Name="intParameter_HeaderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KampusMerdekaModelStoreContainer">
+    <EntitySet Name="mMenu" EntityType="Self.mMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mModule" EntityType="Self.mModule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mParameter_Detail" EntityType="Self.mParameter_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mParameter_Header" EntityType="Self.mParameter_Header" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mRole" EntityType="Self.mRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mRoleAccess" EntityType="Self.mRoleAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mSystemConfiguration" EntityType="Self.mSystemConfiguration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mSystemLanguage" EntityType="Self.mSystemLanguage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mUser" EntityType="Self.mUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mUserRole" EntityType="Self.mUserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrDebugEmail" EntityType="Self.TrDebugEmail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="trDebugError" EntityType="Self.trDebugError" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__mParamete__intPa__30F848ED" Association="Self.FK__mParamete__intPa__30F848ED">
+      <End Role="mParameter_Header" EntitySet="mParameter_Header" />
+      <End Role="mParameter_Detail" EntitySet="mParameter_Detail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,285 @@
+﻿/*
+    UPPERCASE
+*/
+.uppercase {
+    text-transform: uppercase;
+}
+/*
+    LOWERCASE
+*/
+.lowercase {
+    text-transform: lowercase;
+}
+
+
+/*
+NAVBAR 
+*/
+
+.navbar-green {
+    background-color: #da532c !important;
+}
+
+/*
+    SELECT
+*/
+* {
+    font-family: arial;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+div.select {
+    min-width: 150px;
+    padding-right: 15px;
+    margin-left: 10px;
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid #999;
+    position: relative;
+    background: white;
+}
+
+    div.select p {
+        padding: 5px;
+        width: 100%;
+    }
+
+    div.select:after {
+        content: "▼";
+        position: absolute;
+        right: 6px;
+        top: 8px;
+        font-size: 9px;
+    }
+
+    div.select .hidden {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        transition: .1s;
+        background: white;
+        border: 1px solid #999;
+        z-index: 10;
+        width: 100%;
+    }
+
+    div.select:hover .hidden {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    div.select p:hover, div.select:hover {
+        background: #ddd;
+    }
+
+/*
+    LOADING
+*/
+.loading {
+    position: absolute;
+    padding-top: 200px;
+    z-index: 1041;
+    border: none;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+}
+
+.float {
+    position: fixed;
+    width: 100px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    color: #FFF;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 9999999999 !important;
+}
+
+    .float a {
+        padding: 10px;
+        display: block;
+    }
+
+.my-float {
+    margin-top: 22px;
+}
+
+@keyframes lds-blocks {
+    0% {
+        background: #f19d3b;
+    }
+
+    12.5% {
+        background: #f19d3b;
+    }
+
+    12.625% {
+        background: #2a3f54;
+    }
+
+    100% {
+        background: #2a3f54;
+    }
+}
+
+@-webkit-keyframes lds-blocks {
+    0% {
+        background: #f19d3b;
+    }
+
+    12.5% {
+        background: #f19d3b;
+    }
+
+    12.625% {
+        background: #2a3f54;
+    }
+
+    100% {
+        background: #2a3f54;
+    }
+}
+
+.lds-blocks {
+    position: relative;
+}
+
+    .lds-blocks div {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: #2a3f54;
+        -webkit-animation: lds-blocks 2.2s linear infinite;
+        animation: lds-blocks 2.2s linear infinite;
+    }
+
+.lds-blocks {
+    width: 200px !important;
+    height: 200px !important;
+    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}
+
+table {
+    min-height: 250px !important;
+}
+
+.bs-example {
+    margin: 20px;
+    position: relative;
+    z-index: 9999999;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 17px;
+    margin: auto;
+}
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 16px;
+        left: 1px;
+        bottom: 1px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+.blinking {
+    animation: blinker 1s linear infinite;
+    background: #b6ff00;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+        color: red;
+    }
+}
+
+
+
+.pagi {
+    background-image: url('../../img/background/pagi.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.siang {
+    background-image: url('../../img/background/siang.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sore {
+    background-image: url('../../img/background/sore.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.malam {
+    background-image: url('../../img/background/malam.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.bg-main {
+    background-image: url('../../img/hero-img-svg.png');
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position: bottom right;
+}

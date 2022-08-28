@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B4812DE-702F-4345-89CF-279B8C728EE0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>KN_KAMPUS_MERDEKA.DAL</RootNamespace>
+    <AssemblyName>KN_KAMPUS_MERDEKA.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\KampusMerdekaEntities.cs" />
+    <Compile Include="Edmx\KampusMerdeka.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KampusMerdeka.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\KampusMerdeka.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\KampusMerdeka.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KampusMerdeka.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mMenu.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mModule.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mParameter_Detail.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mParameter_Header.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mRole.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mRoleAccess.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mSystemConfiguration.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mSystemLanguage.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mUser.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mUserRole.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\TrDebugEmail.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Edmx\KampusMerdeka.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KampusMerdeka.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Edmx\KampusMerdeka.edmx.diagram">
+      <DependentUpon>KampusMerdeka.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Edmx\KampusMerdeka.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KampusMerdeka.edmx</DependentUpon>
+      <LastGenOutput>KampusMerdeka.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Edmx\KampusMerdeka.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KampusMerdeka.edmx</DependentUpon>
+      <LastGenOutput>KampusMerdeka.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.2.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KN_KAMPUS_MERDEKA.COMMON\KN_KAMPUS_MERDEKA.COMMON.csproj">
+      <Project>{45265FDD-F192-4669-9972-0BBCF20E4836}</Project>
+      <Name>KN_KAMPUS_MERDEKA.COMMON</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

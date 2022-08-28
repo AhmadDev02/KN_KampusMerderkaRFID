@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7390b3d88c7e49d2933f207f431a3ec3" Name="Diagram1">
+        <EntityTypeShape EntityType="KampusMerdekaModel.mMenu" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.mModule" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.mParameter_Detail" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.mParameter_Header" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.mRole" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.mRoleAccess" Width="1.5" PointX="4.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.mSystemConfiguration" Width="1.5" PointX="4.875" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.mSystemLanguage" Width="1.5" PointX="6.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.mUser" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.mUserRole" Width="1.5" PointX="6.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.TrDebugEmail" Width="1.5" PointX="2.75" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="KampusMerdekaModel.FK__mParamete__intPa__30F848ED" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.trDebugError" Width="1.5" PointX="7.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

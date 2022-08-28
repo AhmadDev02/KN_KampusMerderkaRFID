@@ -1,0 +1,92 @@
+﻿@using KN_KAMPUS_MERDEKA.COMMON;
+@using KN_KAMPUS_MERDEKA.COMMON.Entity;
+@using KN_KAMPUS_MERDEKA.MVC;
+@using KN_KAMPUS_MERDEKA.COMMON.Constant
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title | @Configuration.APP_NAME | @Configuration.CompanyName </title>
+    <!--- FAVICON -->
+    <link rel="icon" href="~/Assets/img/favicon.ico" type="image/x-icon">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#00a65a">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    @Styles.Render("~/css/FontAwesome")
+    <!-- Ionicons -->
+    @Styles.Render("~/css/IonIcons")
+    <!-- Tempusdominus Bbootstrap 4 -->
+    @Styles.Render("~/css/tempusdominus")
+    <!-- iCheck -->
+    @Styles.Render("~/css/icheck-bootstrap")
+    <!-- JQVMap -->
+    @Styles.Render("~/css/jqvmap")
+    <!-- Bootstrap Toggle -->
+    @Styles.Render("~/css/bootstrap-toggle")
+    <!-- Theme style -->
+    @Styles.Render("~/css/adminlte")
+    <!-- overlayScrollbars -->
+    @Styles.Render("~/css/overlayScrollbars")
+    <!-- Daterange picker -->
+    @Styles.Render("~/css/daterangepicker")
+    <!-- Datepicker -->
+    @Styles.Render("~/css/bootstrap-datepicker")
+    <!-- summernote -->
+    @Styles.Render("~/css/summernote")
+    <!-- select2 -->
+    @Styles.Render("~/css/select2")
+    <!-- FONT AWESOME ICON PICKER -->
+    @Styles.Render("~/css/fontawesome-iconpicker")
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <!-- JQUERY FANCYBOX -->
+    @Styles.Render("~/css/jquery-fancybox")
+    <!-- BOOTSTRAP SWITCH -->
+    @Styles.Render("~/css/bootstrap-switch")
+    <!-- CUSTOM -->
+    @Styles.Render("~/css/site")
+</head>
+<body>
+    <div class="card">
+        <div class="card-header card-outline card-success">
+            <span class="modal-title">@ViewBag.Title </span>
+            <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 300px;">
+                    @if (ViewData["cari"] != null)
+                    {
+                        <input id="cariLOV" type="text" name="table_search" class="form-control float-right" placeholder="Cari" value="@ViewData["cari"]">
+                    }
+                    else
+                    {
+                        <input id="cariLOV" type="text" name="table_search" class="form-control float-right" placeholder="Cari">
+                    }
+
+                    <div class="input-group-append">
+                        <button type="submit" id="btnCariLOV" class="btn btn-default">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            @RenderBody()
+        </div>
+    </div>
+    <footer class="p-2">
+        <ul class="pagination pagination-sm m-0 float-right">
+            <li class="page-item"><a class="page-link" id="btnPrevLOV"><i class="fa fa-chevron-left"></i></a></li>
+            <li class="page-item"><a class="page-link" id="btnNextLOV"><i class="fa fa-chevron-right"></i></a></li>
+        </ul>
+    </footer>
+
+    @Html.Partial("_Script")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+

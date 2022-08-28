@@ -1,0 +1,119 @@
+﻿@using KN2021_E_RPS.Common
+@using KN2021_E_RPS.Common.Entity
+@using KN2021_E_RPS.MVC
+@*@using KN2021_E_RPS.MVC.FilterConfig*@
+
+@{
+    ViewBag.Title = "Master Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Menu", FormMethod.Post, new { id = "frm1" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("txtHiddenObject")
+    @Html.Hidden("txtGUID")
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            @ViewBag.Title
+            <small> @ViewBag.Title </small>
+        </h1>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <!-- left column -->
+            @*<div class="col-md-6">*@
+            <!-- general form elements -->
+            <div class="box box-success">
+                <div class="box-header with-border text-right">
+                    <a id="btnSave" class="btn btn-success"><i class="fa fa-floppy-o"></i> Save</a>
+                    <a id="btnNew" class="btn btn-warning"><i class="fa fa-refresh"></i> New</a>
+                    <a id="btnDelete" class="btn btn-danger" style="display:none;"><i class="fa fa-trash"></i> Delete </a>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label id="lblID" class="col-sm-2 control-label">ID</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-danger" id="btnLOVID"> <i class="fa fa-search"></i></button>
+                                    </div>
+                                    <input type="text" class="form-control" id="txtID" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label id="lblParent" style="margin-top:14px" class="col-sm-2 control-label">Parent</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" style="margin-top:10px" id="ddlParent">
+                                    <option value="0">-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label id="lblName" style="margin-top:14px" class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" style="margin-top:10px" class="form-control" id="txtName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label id="lblDescription" style="margin-top:14px" class="col-sm-2 control-label">Description</label>
+                            <div class="col-sm-10">
+                                <input type="text" style="margin-top:10px" class="form-control" id="txtDescription">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label id="lblModule" style="margin-top:14px" class="col-sm-2 control-label">Module</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="ddlModule" style="margin-top:10px">
+                                    <option value="0">-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label id="lblLink" style="margin-top:14px" class="col-sm-2 control-label">Link</label>
+                            <div class="col-sm-10">
+                                <input type="text" style="margin-top:10px" class="form-control" id="txtLink">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label id="lblOrder" style="margin-top:14px" class="col-sm-2 control-label">Order</label>
+                            <div class="col-sm-10">
+                                <input type="text" style="margin-top:10px" class="form-control" id="txtOrder">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label id="lblActive" style="margin-top:10px" class="col-sm-2 control-label">Active</label>
+                            <div class="col-sm-10">
+                                <input type="checkbox" style="margin-top:14px" id="chkActive">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+
+                    </div>
+                </form>
+            </div>
+            <!-- /.box -->
+
+        </div>
+        <!--/.col (left) -->
+        @*</div>*@
+        <!-- /.row -->
+    </section>
+
+
+    @section scripts
+    {
+        <script src="~/Scripts/customs/GlobalScript.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+        <script src="~/Scripts/customs/systems/menu/menuscript.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+    }
+}

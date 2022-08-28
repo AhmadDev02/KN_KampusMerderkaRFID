@@ -1,0 +1,59 @@
+﻿@using KN2021_E_RPS.MVC
+@using System.Web.Optimization
+@using System.Web.Mvc.Html;
+@using System.Web.Mvc.Razor;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title | @clsGlobal.AppName | @clsGlobal.CompanyName </title>
+    <!--- FAVICON -->
+    <link rel="icon" href="~/Assets/img/favicon.ico" type="image/x-icon">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#00a65a">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    @Styles.Render("~/css/FontAwesome")
+    <!-- Ionicons -->
+    @Styles.Render("~/css/IonIcons")
+    <!-- iCheck -->
+    @Styles.Render("~/css/icheck-bootstrap")
+    <!-- Theme style -->
+    @Styles.Render("~/css/adminlte")
+    <!-- CUSTOM -->
+    @Styles.Render("~/css/site")
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<center>
+    <body class="login-page" cz-shortcut-listen="true" style="min-height: 512.391px;">
+        <div class="login-box">
+            <!-- /.login-logo -->
+            <div class="card card-outline card-primary">
+                <div class="card-header text-center">
+                    <a class="h1" href="#"><b>@clsGlobal.AppName</b></a>
+                </div>
+                <div class="card-body login-card-body">
+                    <p class="login-box-msg">Sign in to start your session</p>
+                    @RenderBody()
+                </div>
+                <!-- /.login-card-body -->
+            </div>
+        </div>
+        <!-- /.login-box -->
+        <!-- jQuery -->
+        @Scripts.Render("~/js/jquery")
+        <!-- Bootstrap 4 -->
+        @Scripts.Render("~/js/bootstrap")
+        <!-- AdminLTE App -->
+        @Scripts.Render("~/js/adminlte")
+
+        <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+              rel="stylesheet" type="text/css" />
+
+        @RenderSection("scripts", required: false)
+    </body>
+</center>
+</html>

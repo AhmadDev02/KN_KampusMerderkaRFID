@@ -1,0 +1,10 @@
+﻿@using KN_KAMPUS_MERDEKA.COMMON.Constant;
+@using KN_KAMPUS_MERDEKA.MVC.App_Start;
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome @CurrentSession.getPrincipal.user.txtFullName To @Configuration.APP_NAME</h1>
+</div>
+

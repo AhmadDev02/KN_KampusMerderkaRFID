@@ -1,0 +1,164 @@
+﻿/*
+
+NAVBAR 
+*/
+
+.skin-[skinname] .main-header .navbar {
+    background-color: #054a71;
+}
+
+/*
+    SELECT
+*/
+* {
+    font-family: arial;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+div.select {
+    min-width: 150px;
+    padding-right: 15px;
+    margin-left: 10px;
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid #999;
+    position: relative;
+    background: white;
+}
+
+    div.select p {
+        padding: 5px;
+        width: 100%;
+    }
+
+    div.select:after {
+        content: "▼";
+        position: absolute;
+        right: 6px;
+        top: 8px;
+        font-size: 9px;
+    }
+
+    div.select .hidden {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        transition: .1s;
+        background: white;
+        border: 1px solid #999;
+        z-index: 10;
+        width: 100%;
+    }
+
+    div.select:hover .hidden {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    div.select p:hover, div.select:hover {
+        background: #ddd;
+    }
+
+/*
+    LOADING
+*/
+.loading {
+    position: absolute;
+    padding-top: 200px;
+    z-index: 1041;
+    border: none;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+}
+
+.float {
+    position: fixed;
+    width: 100px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    color: #FFF;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 9999999999 !important;
+}
+
+    .float a {
+        padding: 10px;
+        display: block;
+    }
+
+.my-float {
+    margin-top: 22px;
+}
+
+@keyframes lds-blocks {
+    0% {
+        background: #f19d3b;
+    }
+
+    12.5% {
+        background: #f19d3b;
+    }
+
+    12.625% {
+        background: #2a3f54;
+    }
+
+    100% {
+        background: #2a3f54;
+    }
+}
+
+@-webkit-keyframes lds-blocks {
+    0% {
+        background: #f19d3b;
+    }
+
+    12.5% {
+        background: #f19d3b;
+    }
+
+    12.625% {
+        background: #2a3f54;
+    }
+
+    100% {
+        background: #2a3f54;
+    }
+}
+
+.lds-blocks {
+    position: relative;
+}
+
+    .lds-blocks div {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: #2a3f54;
+        -webkit-animation: lds-blocks 2.2s linear infinite;
+        animation: lds-blocks 2.2s linear infinite;
+    }
+
+.lds-blocks {
+    width: 200px !important;
+    height: 200px !important;
+    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}
+
+table {
+    min-height: 250px !important;
+}
+
+.bs-example {
+    margin: 20px;
+    position: relative;
+    z-index: 9999999;
+}

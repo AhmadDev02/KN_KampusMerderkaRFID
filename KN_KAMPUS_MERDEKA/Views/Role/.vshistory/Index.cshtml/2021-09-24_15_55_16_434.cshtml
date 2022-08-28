@@ -1,0 +1,197 @@
+﻿@using KN2021_E_RPS.Common
+@using KN2021_E_RPS.Common.Entity
+@using KN2021_E_RPS.MVC
+
+
+@{
+    ViewBag.Title = "Master Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Index", "Role", FormMethod.Post, new { id = "frm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("txtHiddenObject")
+    @Html.Hidden("txtGUID")
+}
+<div class="row" id="roleFormRow" style="display: none;">
+    <div class="col-md-6 offset-md-3 col-sm-10 offset-sm-1">
+        <div class="card">
+            <div class="card-header card-outline card-success">
+                <div class="card=title">
+                    <h3 class="card-title">
+                        <i class="fa fa-plus"></i> <span id="roleFormTitle">Add Role</span>
+                    </h3>
+                    <div class="card-tools">
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Role Name</label>
+                            <input type="text" class="form-control" placeholder="Enter Role Name " id="txtRoleName">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label>Super User</label>
+                        <div class="form-group">
+                            <label class="switch">
+                                <input type="checkbox" id="bitSuperuser">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer ">
+                <button class="btn btn-outline-success  float-right m-1" id="btnSave">
+                    <i class="fa fa-save"></i> Simpan
+                </button>
+                <button class="btn btn-outline-danger  float-right m-1" id="btnCancelAddRole">
+                    <i class="fa fa-chevron-down"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="roleTableRow">
+
+    <div class="col-md-6 offset-md-3 col-sm-10 offset-sm-1" id="colRole">
+        <div class="card">
+            <div class="card-header card-outline card-red">
+                <h3 class="card-title">
+                    <i class="fa fa-stream"></i> @ViewBag.Title
+                </h3>
+                <div class="card-tools">
+                    <button id="btnAddRole" class="btn btn-success">
+                        <i class="fas fa-plus-square"></i> Add
+                    </button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover table-striped" id="tableRole">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID Role</th>
+                            <th class="text-center">Role Name</th>
+                            <th class="text-center">Super User</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                    <li class="page-item"><a class="page-link" id="btnPrev">«</a></li>
+                    <li class="page-item"><a class="page-link" id="btnNext">»</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.card -->
+    </div>
+    <div class="col-md-6" style="display:none" id="colRoleAccess">
+        <div class="row" id="roleAccessFormRow" style="display: none">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-outline card-success">
+                        <div class="card=title">
+                            <h3 class="card-title">
+                                <i class="fa fa-plus"></i> 
+                                <span>Add Access Role </span>
+                                <span class="text-red bg-yellow p-2 text-bold" id="roleAccessTitleFormAdd"></span>
+                            </h3>
+                            <div class="card-tools">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Parent Menu</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" disabled placeholder="Select Parent Menu" id="txtSelectedParentName">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-default" id="btnClearSelectParent"><i class="fa fa-trash"></i></button>
+                                        <button type="button" class="btn btn-danger" id="btnSelectModul"> Select</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer ">
+                        <button class="btn btn-outline-success  float-right m-1" id="btnSaveRoleAccess">
+                            <i class="fa fa-save"></i> Simpan
+                        </button>
+                        <button class="btn btn-outline-danger  float-right m-1" id="btnCancelAddRoleAccess">
+                            <i class="fa fa-chevron-down"></i> Cancel
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+       <div class="row" id="roleAccessTableRow">
+           <div class="col-md-12">
+               <div class="card">
+                   <div class="card-header">
+                       <h3 class="card-title">
+                           <button class="btn" id="btnCloseRoleAccess"><i class="fa fa-chevron-left"></i></button>
+                           <span id="roleAccessTitleForm">sasad</span>
+                       </h3>
+                       <div class="card-tools">
+                           <button id="btnAddRoleAccess" class="btn btn-success">
+                               <i class="fas fa-plus-square"></i> Add
+                           </button>
+                       </div>
+                   </div>
+                   <div class="card-body">
+                       <table class="table table-hover table-striped" id="tableRoleAccess">
+                           <thead>
+                               <tr>
+                                   <th class="text-center">ID Role Access</th>
+                                   <th class="text-center">Module</th>
+                                   <th class="text-center">Action</th>
+                               </tr>
+                           </thead>
+                           <tbody id="tbodyRoleAccess">
+                           </tbody>
+                       </table>
+                   </div>
+                   <div class="card-footer">
+                       <ul class="pagination pagination-sm m-0 float-right">
+                           <li class="page-item"><a class="page-link" id="btnPrevRoleAccess">«</a></li>
+                           <li class="page-item"><a class="page-link" id="btnNextRoleAccess">»</a></li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+
+
+
+<!-- /.row -->
+@section scripts{
+    <script src="~/Assets/js/customs/systems/roleaccess/roleAccessscript.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+    <script src="~/Assets/js/customs/systems/role/rolescript.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+    <script>
+            $(() => {
+                $(".search-bar").append(@Html.Partial("_Search"));
+                $inputSearch = $(".search-bar").find(".search-input");
+                $inputSearch.on('keyup', (e) => {
+                    if ($inputSearch.val().toString().length % 3 == 0 && $inputSearch.val().toString() != cari  || (e.key == 'Enter')) {
+                        cari = $inputSearch.val();
+                        searchRole();
+                    }
+
+                })
+            });
+    </script>
+}

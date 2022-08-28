@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45265FDD-F192-4669-9972-0BBCF20E4836}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>KN_KAMPUS_MERDEKA.COMMON</RootNamespace>
+    <AssemblyName>KN_KAMPUS_MERDEKA.COMMON</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constant\Configuration.cs" />
+    <Compile Include="Dto\Request\Systems\Menu\MenuRequest.cs" />
+    <Compile Include="Dto\Request\Systems\Module\ModuleRequest.cs" />
+    <Compile Include="Dto\Request\Systems\RoleAccess\RoleAccessRequest.cs" />
+    <Compile Include="Dto\Request\Systems\Role\RoleRequest.cs" />
+    <Compile Include="Dto\Request\Systems\UserRole\UserRoleRequest.cs" />
+    <Compile Include="Dto\Request\Systems\User\UserRegister.cs" />
+    <Compile Include="Dto\Response\Systems\Menu\MenuResponse.cs" />
+    <Compile Include="Dto\Response\Systems\Module\ModuleResponse.cs" />
+    <Compile Include="Dto\Response\Systems\RoleAccess\RoleAccessResponse.cs" />
+    <Compile Include="Dto\Response\Systems\Role\RoleResponse.cs" />
+    <Compile Include="Dto\Response\Systems\UserRole\UserRoleResponse.cs" />
+    <Compile Include="Dto\Response\Systems\User\UserResponse.cs" />
+    <Compile Include="Entity\Systems\mMenu.cs" />
+    <Compile Include="Entity\Systems\mModule.cs" />
+    <Compile Include="Entity\Systems\mParameter_Detail.cs" />
+    <Compile Include="Entity\Systems\mParameter_Header.cs" />
+    <Compile Include="Entity\Systems\mRole.cs" />
+    <Compile Include="Entity\Systems\mRoleAccess.cs" />
+    <Compile Include="Entity\Systems\mSystemConfiguration.cs" />
+    <Compile Include="Entity\Systems\mSystemLanguage.cs" />
+    <Compile Include="Entity\Systems\mUser.cs" />
+    <Compile Include="Entity\Systems\mUserRole.cs" />
+    <Compile Include="Entity\Systems\TrDebugEmail.cs" />
+    <Compile Include="Entity\Systems\trDebugError.cs" />
+    <Compile Include="Library\clsActiveDirectory.cs" />
+    <Compile Include="Library\clsRijndael.cs" />
+    <Compile Include="Library\clsSystemConfiguration.cs" />
+    <Compile Include="Library\CryptoEngine.cs" />
+    <Compile Include="Library\cTripleDES.cs" />
+    <Compile Include="Library\CustomDateConverter.cs" />
+    <Compile Include="Library\EFClientUtility.cs" />
+    <Compile Include="Library\HelperConverter.cs" />
+    <Compile Include="Library\Pageable.cs" />
+    <Compile Include="Model\LoginModel.cs" />
+    <Compile Include="Model\Principal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dto\Response\Masters\" />
+    <Folder Include="Dto\Response\Transactions\" />
+    <Folder Include="Entity\Masters\" />
+    <Folder Include="Entity\Transactions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

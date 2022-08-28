@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KampusMerdekaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="mMenu">
+    <Key>
+      <PropertyRef Name="intMenuID" />
+    </Key>
+    <Property Name="intMenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intParentID" Type="Int32" />
+    <Property Name="txtMenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="intModuleID" Type="Int32" />
+    <Property Name="txtLink" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="intOrderID" Type="Int32" />
+    <Property Name="bitActive" Type="Boolean" />
+    <Property Name="txtIcon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmInsertedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mModule">
+    <Key>
+      <PropertyRef Name="intModuleID" />
+    </Key>
+    <Property Name="intModuleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtModuleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="txtDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmInsertedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mParameter_Detail">
+    <Key>
+      <PropertyRef Name="intParameter_DetailID" />
+    </Key>
+    <Property Name="intParameter_DetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intParameter_HeaderID" Type="Int32" />
+    <Property Name="txtCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bitActive" Type="Boolean" />
+    <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="mParameter_Header" Relationship="Self.FK__mParamete__intPa__30F848ED" FromRole="mParameter_Detail" ToRole="mParameter_Header" />
+  </EntityType>
+  <EntityType Name="mParameter_Header">
+    <Key>
+      <PropertyRef Name="intParameter_HeaderID" />
+    </Key>
+    <Property Name="intParameter_HeaderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtmInsertedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtmUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="mParameter_Detail" Relationship="Self.FK__mParamete__intPa__30F848ED" FromRole="mParameter_Header" ToRole="mParameter_Detail" />
+  </EntityType>
+  <EntityType Name="mRole">
+    <Key>
+      <PropertyRef Name="intRoleID" />
+    </Key>
+    <Property Name="intRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtRoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bitSuperuser" Type="Boolean" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmInsertedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mRoleAccess">
+    <Key>
+      <PropertyRef Name="intRoleAccessID" />
+    </Key>
+    <Property Name="intRoleAccessID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intRoleID" Type="Int32" />
+    <Property Name="intModuleID" Type="Int32" />
+    <Property Name="bitEdit" Type="Boolean" />
+    <Property Name="bitView" Type="Boolean" />
+    <Property Name="bitDelete" Type="Boolean" />
+    <Property Name="bitPrint" Type="Boolean" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmInsertedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mSystemConfiguration">
+    <Key>
+      <PropertyRef Name="txtSystemConfigurationID" />
+      <PropertyRef Name="txtKeyID" />
+    </Key>
+    <Property Name="txtSystemConfigurationID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtKeyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="intModuleID" Type="Int32" />
+    <Property Name="txtDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="txtDefaultValue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="txtValue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmInsertedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mSystemLanguage">
+    <Key>
+      <PropertyRef Name="txtSystemLanguageID" />
+      <PropertyRef Name="txtKeyID" />
+      <PropertyRef Name="txtLanguageID" />
+    </Key>
+    <Property Name="txtSystemLanguageID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtKeyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtLanguageID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtDefaultValue" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtValue" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmInsertedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mUser">
+    <Key>
+      <PropertyRef Name="intUserID" />
+    </Key>
+    <Property Name="intUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="txtFullName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="txtNick" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="txtEmpID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="txtEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bitActive" Type="Boolean" />
+    <Property Name="bitUseActiveDirectory" Type="Boolean" />
+    <Property Name="txtPassword" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="dtmLastLogin" Type="DateTime" Precision="3" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmInsertedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mUserRole">
+    <Key>
+      <PropertyRef Name="intUserRoleID" />
+    </Key>
+    <Property Name="intUserRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intRoleID" Type="Int32" Nullable="false" />
+    <Property Name="intUserID" Type="Int32" Nullable="false" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmInsertedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TrDebugEmail">
+    <Key>
+      <PropertyRef Name="intDebugEmailID" />
+    </Key>
+    <Property Name="intDebugEmailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtFrom" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="txtTo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="txtCC" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="txtBCC" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="txtSubject" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="txtPriority" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="bitIsBodyHTML" Type="Int16" />
+    <Property Name="txtBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmInsertedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmUpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__mParamete__intPa__30F848ED">
+    <End Role="mParameter_Header" Type="Self.mParameter_Header" Multiplicity="0..1" />
+    <End Role="mParameter_Detail" Type="Self.mParameter_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mParameter_Header">
+        <PropertyRef Name="intParameter_HeaderID" />
+      </Principal>
+      <Dependent Role="mParameter_Detail">
+        <PropertyRef Name="intParameter_HeaderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KampusMerdekaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mMenus" EntityType="Self.mMenu" />
+    <EntitySet Name="mModules" EntityType="Self.mModule" />
+    <EntitySet Name="mParameter_Detail" EntityType="Self.mParameter_Detail" />
+    <EntitySet Name="mParameter_Header" EntityType="Self.mParameter_Header" />
+    <EntitySet Name="mRoles" EntityType="Self.mRole" />
+    <EntitySet Name="mRoleAccesses" EntityType="Self.mRoleAccess" />
+    <EntitySet Name="mSystemConfigurations" EntityType="Self.mSystemConfiguration" />
+    <EntitySet Name="mSystemLanguages" EntityType="Self.mSystemLanguage" />
+    <EntitySet Name="mUsers" EntityType="Self.mUser" />
+    <EntitySet Name="mUserRoles" EntityType="Self.mUserRole" />
+    <EntitySet Name="TrDebugEmails" EntityType="Self.TrDebugEmail" />
+    <AssociationSet Name="FK__mParamete__intPa__30F848ED" Association="Self.FK__mParamete__intPa__30F848ED">
+      <End Role="mParameter_Header" EntitySet="mParameter_Header" />
+      <End Role="mParameter_Detail" EntitySet="mParameter_Detail" />
+    </AssociationSet>
+    <EntitySet Name="trDebugErrors" EntityType="KampusMerdekaModel.trDebugError" />
+  </EntityContainer>
+  <EntityType Name="trDebugError">
+    <Key>
+      <PropertyRef Name="txtId" />
+    </Key>
+    <Property Name="txtId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="txtDebugName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="txtErrorInfo" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="dtmErrorDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="txtStackTrace" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

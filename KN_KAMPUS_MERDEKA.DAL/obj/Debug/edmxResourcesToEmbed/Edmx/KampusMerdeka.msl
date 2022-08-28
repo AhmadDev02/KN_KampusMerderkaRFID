@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KampusMerdekaModelStoreContainer" CdmEntityContainer="KampusMerdekaEntities">
+    <EntitySetMapping Name="mMenus">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.mMenu">
+        <MappingFragment StoreEntitySet="mMenu">
+          <ScalarProperty Name="intMenuID" ColumnName="intMenuID" />
+          <ScalarProperty Name="intParentID" ColumnName="intParentID" />
+          <ScalarProperty Name="txtMenuName" ColumnName="txtMenuName" />
+          <ScalarProperty Name="txtDescription" ColumnName="txtDescription" />
+          <ScalarProperty Name="intModuleID" ColumnName="intModuleID" />
+          <ScalarProperty Name="txtLink" ColumnName="txtLink" />
+          <ScalarProperty Name="intOrderID" ColumnName="intOrderID" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+          <ScalarProperty Name="txtIcon" ColumnName="txtIcon" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtmInsertedDate" ColumnName="dtmInsertedDate" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+          <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
+          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mModules">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.mModule">
+        <MappingFragment StoreEntitySet="mModule">
+          <ScalarProperty Name="intModuleID" ColumnName="intModuleID" />
+          <ScalarProperty Name="txtModuleName" ColumnName="txtModuleName" />
+          <ScalarProperty Name="txtDescription" ColumnName="txtDescription" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtmInsertedDate" ColumnName="dtmInsertedDate" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+          <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
+          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mParameter_Detail">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.mParameter_Detail">
+        <MappingFragment StoreEntitySet="mParameter_Detail">
+          <ScalarProperty Name="intParameter_DetailID" ColumnName="intParameter_DetailID" />
+          <ScalarProperty Name="intParameter_HeaderID" ColumnName="intParameter_HeaderID" />
+          <ScalarProperty Name="txtCode" ColumnName="txtCode" />
+          <ScalarProperty Name="txtDesc" ColumnName="txtDesc" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mParameter_Header">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.mParameter_Header">
+        <MappingFragment StoreEntitySet="mParameter_Header">
+          <ScalarProperty Name="intParameter_HeaderID" ColumnName="intParameter_HeaderID" />
+          <ScalarProperty Name="txtType" ColumnName="txtType" />
+          <ScalarProperty Name="txtDescription" ColumnName="txtDescription" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtmInsertedDate" ColumnName="dtmInsertedDate" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+          <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
+          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mRoles">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.mRole">
+        <MappingFragment StoreEntitySet="mRole">
+          <ScalarProperty Name="intRoleID" ColumnName="intRoleID" />
+          <ScalarProperty Name="txtRoleName" ColumnName="txtRoleName" />
+          <ScalarProperty Name="bitSuperuser" ColumnName="bitSuperuser" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtmInsertedDate" ColumnName="dtmInsertedDate" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+          <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
+          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mRoleAccesses">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.mRoleAccess">
+        <MappingFragment StoreEntitySet="mRoleAccess">
+          <ScalarProperty Name="intRoleAccessID" ColumnName="intRoleAccessID" />
+          <ScalarProperty Name="intRoleID" ColumnName="intRoleID" />
+          <ScalarProperty Name="intModuleID" ColumnName="intModuleID" />
+          <ScalarProperty Name="bitEdit" ColumnName="bitEdit" />
+          <ScalarProperty Name="bitView" ColumnName="bitView" />
+          <ScalarProperty Name="bitDelete" ColumnName="bitDelete" />
+          <ScalarProperty Name="bitPrint" ColumnName="bitPrint" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtmInsertedDate" ColumnName="dtmInsertedDate" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+          <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
+          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mSystemConfigurations">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.mSystemConfiguration">
+        <MappingFragment StoreEntitySet="mSystemConfiguration">
+          <ScalarProperty Name="txtSystemConfigurationID" ColumnName="txtSystemConfigurationID" />
+          <ScalarProperty Name="txtKeyID" ColumnName="txtKeyID" />
+          <ScalarProperty Name="intModuleID" ColumnName="intModuleID" />
+          <ScalarProperty Name="txtDescription" ColumnName="txtDescription" />
+          <ScalarProperty Name="txtDefaultValue" ColumnName="txtDefaultValue" />
+          <ScalarProperty Name="txtValue" ColumnName="txtValue" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtmInsertedDate" ColumnName="dtmInsertedDate" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+          <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
+          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mSystemLanguages">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.mSystemLanguage">
+        <MappingFragment StoreEntitySet="mSystemLanguage">
+          <ScalarProperty Name="txtSystemLanguageID" ColumnName="txtSystemLanguageID" />
+          <ScalarProperty Name="txtKeyID" ColumnName="txtKeyID" />
+          <ScalarProperty Name="txtLanguageID" ColumnName="txtLanguageID" />
+          <ScalarProperty Name="txtDefaultValue" ColumnName="txtDefaultValue" />
+          <ScalarProperty Name="txtValue" ColumnName="txtValue" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtmInsertedDate" ColumnName="dtmInsertedDate" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+          <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
+          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mUsers">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.mUser">
+        <MappingFragment StoreEntitySet="mUser">
+          <ScalarProperty Name="intUserID" ColumnName="intUserID" />
+          <ScalarProperty Name="txtUserName" ColumnName="txtUserName" />
+          <ScalarProperty Name="txtFullName" ColumnName="txtFullName" />
+          <ScalarProperty Name="txtNick" ColumnName="txtNick" />
+          <ScalarProperty Name="txtEmpID" ColumnName="txtEmpID" />
+          <ScalarProperty Name="txtEmail" ColumnName="txtEmail" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+          <ScalarProperty Name="bitUseActiveDirectory" ColumnName="bitUseActiveDirectory" />
+          <ScalarProperty Name="txtPassword" ColumnName="txtPassword" />
+          <ScalarProperty Name="dtmLastLogin" ColumnName="dtmLastLogin" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtmInsertedDate" ColumnName="dtmInsertedDate" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+          <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
+          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mUserRoles">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.mUserRole">
+        <MappingFragment StoreEntitySet="mUserRole">
+          <ScalarProperty Name="intUserRoleID" ColumnName="intUserRoleID" />
+          <ScalarProperty Name="intRoleID" ColumnName="intRoleID" />
+          <ScalarProperty Name="intUserID" ColumnName="intUserID" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtmInsertedDate" ColumnName="dtmInsertedDate" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+          <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
+          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrDebugEmails">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.TrDebugEmail">
+        <MappingFragment StoreEntitySet="TrDebugEmail">
+          <ScalarProperty Name="intDebugEmailID" ColumnName="intDebugEmailID" />
+          <ScalarProperty Name="txtFrom" ColumnName="txtFrom" />
+          <ScalarProperty Name="txtTo" ColumnName="txtTo" />
+          <ScalarProperty Name="txtCC" ColumnName="txtCC" />
+          <ScalarProperty Name="txtBCC" ColumnName="txtBCC" />
+          <ScalarProperty Name="txtSubject" ColumnName="txtSubject" />
+          <ScalarProperty Name="txtPriority" ColumnName="txtPriority" />
+          <ScalarProperty Name="bitIsBodyHTML" ColumnName="bitIsBodyHTML" />
+          <ScalarProperty Name="txtBody" ColumnName="txtBody" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtmInsertedDate" ColumnName="dtmInsertedDate" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+          <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
+          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trDebugErrors">
+      <EntityTypeMapping TypeName="KampusMerdekaModel.trDebugError">
+        <MappingFragment StoreEntitySet="trDebugError">
+          <ScalarProperty Name="txtStackTrace" ColumnName="txtStackTrace" />
+          <ScalarProperty Name="dtmErrorDate" ColumnName="dtmErrorDate" />
+          <ScalarProperty Name="txtErrorInfo" ColumnName="txtErrorInfo" />
+          <ScalarProperty Name="txtDebugName" ColumnName="txtDebugName" />
+          <ScalarProperty Name="txtId" ColumnName="txtId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

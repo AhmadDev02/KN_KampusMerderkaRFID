@@ -1,0 +1,264 @@
+
+(function ($) {
+    $.extend({
+        showLoading: function () {
+            $("body").LoadingOverlay("show");
+        },
+        hideLoading: function () {
+            $("body").LoadingOverlay("hide");
+        },
+        postApi: function (uri, data, sukses, error, header) {
+            $.ajax({
+                type: "POST",
+                url: uri,
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                datatype: "json",
+                headers: header,
+                beforeSend: function () {
+                    $.showLoading()
+                },
+                success: function (response) {
+                    sukses(response)
+                },
+                error: function (response) {
+                    error(response)
+                },
+                complete: function (response) {
+                    $.hideLoading()
+                }
+            });
+        },
+        putApi: function (uri, data, sukses, error) {
+            $.ajax({
+                type: "PUT",
+                url: uri,
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                datatype: "json",
+                beforeSend: function () {
+                    $.showLoading()
+                },
+                success: function (response) {
+                    sukses(response)
+                },
+                error: function (response) {
+                    error(response)
+                },
+                complete: function (response) {
+                    $.hideLoading()
+                }
+            });
+        },
+        getApi: function (uri, sukses, error) {
+            $.ajax({
+                type: "GET",
+                url: uri,
+                datatype: "json",
+                beforeSend: function () {
+                    $.showLoading()
+                },
+                success: function (response) {
+                    sukses(response)
+                },
+                error: function (response) {
+                    error(response)
+                },
+                complete: function (response) {
+                    $.hideLoading()
+                }
+            });
+        },
+        deleteApi: function (uri, sukses, error) {
+            $.ajax({
+                type: "delete",
+                url: uri,
+                contentType: "application/json; charset=utf-8",
+                datatype: "json",
+                beforeSend: function () {
+                    $.showLoading()
+                },
+                success: function (response) {
+                    sukses(response)
+                },
+                error: function (response) {
+                    error(response)
+                },
+                complete: function (response) {
+                    $.hideLoading()
+                }
+            });
+        },
+        successMessage: function (title, message) {
+            Swal.fire(
+                title,
+                message,
+                'success'
+            );
+        },
+        errorMessage: function (title, message) {
+            Swal.fire(
+                title,
+                message,
+                'error'
+            );
+        },
+        inputText: function (title, callback) {
+            Swal.fire({
+                title: title,
+                input: 'text',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Add',
+            }).then((result) => {
+                if (result.value) {
+                    callback(result.value);
+                }
+            })
+        },
+        confirmMessage: function (title, message, confirmtext, callbackaction) {
+            Swal.fire({
+                title: title,
+                text: message,
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: confirmtext
+            }).then((result) => {
+                if (result.value) {
+                    callbackaction();
+                }
+            })
+        },
+        confirmMessageHtml: function (title, messageHtml, confirmtext, callbackaction) {
+            Swal.fire({
+                title: `<strong>${title}</strong>`,
+                html: `<p>${messageHtml}</p>`,
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: confirmtext
+            }).then((result) => {
+                if (result.value) {
+                    callbackaction();
+                }
+            })
+        },
+        formatRupiah: function (number) {
+            let stringNumber = number.toString().replace(/[^,\d]/g, "").toString(),
+                split = stringNumber.split(","),
+                sisa = split[0].length % 3,
+                hasil = split[0].substr(0, sisa),
+                ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+            if (ribuan) {
+                separator = sisa ? "." : "";
+                hasil += separator + ribuan.join(".");
+            }
+            hasil = split[1] != undefined ? hasil + "," + split[1] : hasil;
+            return "Rp. " + hasil;
+        },
+        showLOV: function (LOV) {
+            $.fancybox({
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                fitToView: true,
+                nextSpeed: 0, //important
+                prevSpeed: 0, //important
+                modal: false,
+                padding: 0,
+                width: '60%',
+                height: '100%',
+                scrolling: 'false',
+                href: '/system/lov/' + LOV,
+                type: 'iframe',
+                autoSize: false,
+                afterClose: function () {
+                    $(window).trigger('fancyboxClosed');
+                }
+            });
+        },
+        parseJsonDate: function (jsonDate, format, withday = false) {
+            try {
+                const re = /-?\d+/;
+                const m = re.exec(jsonDate);
+                let dt = parseInt(m[0], 10);
+                let dtm = new Date(dt);
+                const days = ['Minggu ', 'Senin ', 'Selasa ', 'Rabu ', 'Kamis ', 'Jumat ', 'Sabtu '];
+                let day = withday ? days[dtm.getDay()] : '';
+
+                return day + $.format.date(dtm, format);
+            } catch (e) {
+                return "-";
+            }
+        },
+        parseJsonDateAsPretty: function (jsonDate) {
+            try {
+                const re = /-?\d+/;
+                const m = re.exec(jsonDate);
+                let dt = parseInt(m[0], 10);
+                let dtm = new Date(dt);
+                return $.format.prettyDate(dtm);
+            } catch (e) {
+                return "-";
+            }
+        },
+        switchElement: function (x, y) {
+            try {
+                if (x != 'undefined' && x != null && x.length > 0 && y < x.length) {
+                    for (let i = 0; i < x.length; i++) {
+                        try {
+                            if (i == y) {
+                                x[i].slideToggle(true);
+                            } else {
+                                x[i].slideToggle(false);
+                            }
+                        } catch (e) {
+                            console.log(e);
+                        }
+                    }
+                };
+            } catch (e) {
+                console.log(e);
+            }
+        }
+    });
+
+
+    Inputmask.extendAliases({
+        rupiah: {
+            prefix: "Rp ",
+            groupSeparator: ".",
+            alias: "numeric",
+            placeholder: "0",
+            autoGroup: true,
+            digits: 0,
+            digitsOptional: false,
+            clearMaskOnLostFocus: false,
+            autoUnmask: true
+        }
+    });
+})(window.jQuery);
+let darkMode = localStorage.getItem('dark_mode') | 1;
+$("#darkSwitch").prop('checked', darkMode);
+if (darkMode == 1) {
+    $('body').addClass('dark-mode')
+} else {
+    $('body').removeClass('dark-mode')
+}
+$(document).ready(() => {
+
+    $('#darkSwitch').on('change', function () {
+        if ($(this).is(':checked')) {
+            localStorage.setItem('dark_mode', 1);
+            $('body').addClass('dark-mode')
+        } else {
+            localStorage.setItem('dark_mode', 0);
+            $('body').removeClass('dark-mode')
+        }
+    })
+
+
+})

@@ -1,0 +1,171 @@
+﻿@using KN2021_E_RPS.Common
+@using KN2021_E_RPS.Common.Entity
+@using KN2021_E_RPS.MVC
+
+
+@{
+    ViewBag.Title = "Master Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Index", "Menu", FormMethod.Post, new { id = "frm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("txtHiddenObject")
+    @Html.Hidden("txtGUID")
+}
+<div class="row" id="menuFormRow" style="display: none;">
+    <div class="col-md-8 offset-md-2 col-sm-12">
+        <div class="card">
+            <div class="card-header card-outline card-success">
+                <div class="card=title">
+                    <h3 class="card-title">
+                        <i class="fa fa-plus"></i> <span id="menuFormTitle">Add Menu</span>
+                    </h3>
+                    <div class="card-tools">
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Parent Menu</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" disabled placeholder="Select Parent Menu" id="txtSelectedParentName">
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-default" id="btnClearSelectParent"><i class="fa fa-trash"></i></button>
+                                <button type="button" class="btn btn-danger" id="btnSelectParent"> Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Menu Name</label>
+                            <input type="text" class="form-control uppercase" placeholder="Enter Menu Name " id="txtMenuName">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" class="form-control uppercase" placeholder="Enter Description " id="txtDescription">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Module</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" disabled placeholder="Select Module " id="txtSelectedModuleName">
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-danger" id="btnSelectModule"> Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Link</label>
+                            <input type="text" class="form-control" placeholder="Enter Link " id="txtLink">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Order</label>
+                            <input type="number" class="form-control" placeholder="Enter Description" id="intOrderID">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Icon</label>
+                            <input type="text" class="form-control form-control icp icp-auto" placeholder="Enter Description" id="txtIcon">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Active</label>
+                        <div class="form-group">
+                            <label class="switch">
+                                <input type="checkbox" id="bitActive">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-footer ">
+                <button class="btn btn-outline-success  float-right m-1" id="btnSave">
+                    <i class="fa fa-save"></i> Simpan
+                </button>
+                <button class="btn btn-outline-danger  float-right m-1" id="btnCancelAddMenu">
+                    <i class="fa fa-chevron-down"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="menuTableRow">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-outline card-red">
+                <h3 class="card-title">
+                    <i class="fa fa-stream"></i> @ViewBag.Title
+                </h3>
+                <div class="card-tools">
+                    <button id="btnAddMenu" class="btn btn-success">
+                        <i class="fas fa-plus-square"></i> Add
+                    </button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover table-striped" id="tableMenu">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID Menu</th>
+                            <th class="text-center">Menu Name</th>
+                            <th class="text-center">Description</th>
+                            <th class="text-center">Link</th>
+                            <th class="text-center">Parent</th>
+                            <th class="text-center">Module</th>
+                            <th class="text-center">Order</th>
+                            <th class="text-center">Icon</th>
+                            <th class="text-center">Active</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                    <li class="page-item"><a class="page-link" id="btnPrev">«</a></li>
+                    <li class="page-item"><a class="page-link" id="btnNext">»</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+
+
+
+<!-- /.row -->
+@section scripts{
+    <script src="~/Assets/js/customs/systems/menu/menuscript.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+    <script>
+            $(() => {
+                $(".search-bar").append(@Html.Partial("_Search"));
+                $inputSearch = $(".search-bar").find(".search-input");
+                $inputSearch.on('keyup', (e) => {
+                    if ($inputSearch.val().toString().length % 3 == 0 && $inputSearch.val().toString() != cari  || (e.key == 'Enter')) {
+                        cari = $inputSearch.val();
+                        searchMenu();
+                    }
+
+                })
+            });
+    </script>
+}
