@@ -21,7 +21,7 @@ namespace KN_KAMPUS_MERDEKA.MVC.App_Start.Filter
             READ = 2,
         }
         private AccessType acccessType = AccessType.READ;
-        private object roles;
+        private  object roles;
 
         public HasAccessType(AccessType type)
         {

@@ -35,12 +35,14 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!--  menu -->
                 @Html.Raw(mMenuCustomBL.GenerateMenuHierarchy(CurrentSession.getPrincipal.roles, ""))
+
                 <li class="nav-item">
-                    <a href="#" class="nav-link" data-toggle="modal" data-target="#modalLogout">
+                    <a href="#" class="nav-link" data-toggle="modal" data-target="#modallogout">
                         <i class="fas fa-sign-out-alt nav-icon"></i>
-                        <p>Logout</p>
+                        <p>logout</p>
                     </a>
                 </li>
+
 
             </ul>
 

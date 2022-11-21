@@ -1,5 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="KampusMerdekaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="mBIN">
+    <Key>
+      <PropertyRef Name="intBIN_id" />
+    </Key>
+    <Property Name="intBIN_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intBIN_NO" Type="int" />
+    <Property Name="intTag_id" Type="int" />
+    <Property Name="bitActive" Type="bit" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedBy" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedBy" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mKeyInDumping">
+    <Key>
+      <PropertyRef Name="intKeyInDumpingID" />
+    </Key>
+    <Property Name="intKeyInDumpingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intNoBO" Type="int" />
+    <Property Name="txtCharges" Type="varchar" MaxLength="50" />
+    <Property Name="txtNamaProduk" Type="varchar" MaxLength="100" />
+    <Property Name="txtPIC" Type="varchar" MaxLength="50" />
+    <Property Name="txtDumpingLine" Type="varchar" MaxLength="50" />
+    <Property Name="txtStartTime" Type="varchar" MaxLength="50" />
+    <Property Name="txtEndTime" Type="varchar" MaxLength="50" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedDate" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedDate" Type="datetime" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+    <Property Name="txtStatus" Type="varchar" MaxLength="50" />
+    <Property Name="bitStatus" Type="bit" />
+  </EntityType>
   <EntityType Name="mMenu">
     <Key>
       <PropertyRef Name="intMenuID" />
@@ -55,6 +89,49 @@
     <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
     <Property Name="dtmUpdatedDate" Type="datetime" />
     <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mRFID_Lokasi">
+    <Key>
+      <PropertyRef Name="intLokasiID" />
+    </Key>
+    <Property Name="intLokasiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtLokasi" Type="varchar" MaxLength="100" />
+    <Property Name="txtDetailLokasi" Type="varchar" MaxLength="100" />
+    <Property Name="bitActive" Type="bit" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedBy" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedBy" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mRFID_Reader">
+    <Key>
+      <PropertyRef Name="intReader_id" />
+    </Key>
+    <Property Name="intReader_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtIP_addreess" Type="varchar" MaxLength="50" />
+    <Property Name="intLokasiID" Type="int" />
+    <Property Name="intPowerJarak" Type="int" />
+    <Property Name="txtCategory" Type="varchar" MaxLength="100" />
+    <Property Name="intPort" Type="int" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedBy" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedBy" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mRFID_Tag">
+    <Key>
+      <PropertyRef Name="intTag_id" />
+    </Key>
+    <Property Name="intTag_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtDescription" Type="varchar" MaxLength="100" />
+    <Property Name="bitActive" Type="bit" />
+    <Property Name="txtGUID" Type="varchar" MaxLength="100" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmInsertedBy" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtmUpdatedBy" Type="datetime" />
   </EntityType>
   <EntityType Name="mRole">
     <Key>
@@ -195,10 +272,15 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="KampusMerdekaModelStoreContainer">
+    <EntitySet Name="mBIN" EntityType="Self.mBIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mKeyInDumping" EntityType="Self.mKeyInDumping" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mMenu" EntityType="Self.mMenu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mModule" EntityType="Self.mModule" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mParameter_Detail" EntityType="Self.mParameter_Detail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mParameter_Header" EntityType="Self.mParameter_Header" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mRFID_Lokasi" EntityType="Self.mRFID_Lokasi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mRFID_Reader" EntityType="Self.mRFID_Reader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mRFID_Tag" EntityType="Self.mRFID_Tag" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mRole" EntityType="Self.mRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mRoleAccess" EntityType="Self.mRoleAccess" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mSystemConfiguration" EntityType="Self.mSystemConfiguration" Schema="dbo" store:Type="Tables" />

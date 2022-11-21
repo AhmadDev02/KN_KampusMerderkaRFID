@@ -17,6 +17,7 @@ namespace KN_KAMPUS_MERDEKA.COMMON.Model
         public List<int> roles = new List<int>();
         [DataMember]
         public string txtLangID;
+        public object mRFID_Reader;
 
         public void New()
         {

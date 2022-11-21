@@ -298,7 +298,7 @@ $btnSave.bind('click', () => {
 $btnSelectModule.bind('click', () => {
     $.showLOV("Module");
 })
-$btnSelectParent.bind('click', () => {
+$btnSelectParent.bind('click', () => {    
     $.showLOV("Menu");
 });
 $btnClearSelectParent.bind('click', () => {

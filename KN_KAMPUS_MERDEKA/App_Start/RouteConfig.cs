@@ -57,6 +57,18 @@ namespace KN_KAMPUS_MERDEKA.MVC
                 defaults: new { controller = "LOV", action = "Index", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+               name: "KeyInDumping",
+               url: "Dashboard/KeyInDumping/{action}/{id}",
+               defaults: new { controller = "KeyInDumping", action = "Index", id = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
+              name: "Backoffice",
+              url: "Dashboard/Backoffice/{action}/{id}",
+              defaults: new { controller = "Backoffice", action = "Index", id = UrlParameter.Optional }
+          );
+
 
             routes.MapRoute(
                 name: "Default",

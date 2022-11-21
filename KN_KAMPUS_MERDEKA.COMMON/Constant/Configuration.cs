@@ -69,7 +69,7 @@ namespace KN_KAMPUS_MERDEKA.COMMON.Constant
             public const string SHOW_STACKTRACE = "N";
             public const string ExceptionPublisherEmailSender = "no-reply@kalbenutritionals.com";
             public const string ExceptionPublisherEmailSubject = "TEMPLATE:ERROR";
-            public const string SenderEmail = "asep.sopiyan@kalbenutritionals.com";
+            public const string SenderEmail = "afajaralfaravi@gmail.com";
             public const string JoinString = ";";
             public const string SEND_ERROREMAIL = "Y";
             public const string DefaultLangID = "IN";
@@ -201,6 +201,17 @@ namespace KN_KAMPUS_MERDEKA.COMMON.Constant
         public class PRINTOUT
         {
             public const string PDF_TYPE = "PDF";
+        }
+        
+
+        //========unutuk on progress new======//
+        public class STATUS 
+        {
+            public const string ONPROGRESS = "ONPROGRESS";
+            public const string REJECT = "REJECT";
+            public const string DONE = "DONE";
+            public const string WAITING = "WAITING";
+            
         }
 
     }

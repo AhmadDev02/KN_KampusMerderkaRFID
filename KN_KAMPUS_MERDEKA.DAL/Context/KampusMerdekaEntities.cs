@@ -1,4 +1,6 @@
-﻿using KN_KAMPUS_MERDEKA.COMMON.Entity.Systems;
+﻿using KN_KAMPUS_MERDEKA.COMMON.Entity;
+using KN_KAMPUS_MERDEKA.COMMON.Entity.Masters;
+using KN_KAMPUS_MERDEKA.COMMON.Entity.Systems;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -36,5 +38,7 @@ namespace KN_KAMPUS_MERDEKA.DAL.Context
         public virtual DbSet<mUserRole> mUserRoles { get; set; }
         public virtual DbSet<TrDebugEmail> TrDebugEmails { get; set; }
         public virtual DbSet<trDebugError> trDebugErrors { get; set; }
+        public virtual DbSet<mKeyInDumping> mKeyInDumpings { get; set; }
+        public virtual DbSet<mRFID_Reader> mRFID_Reader { get; set; }
     }
 }

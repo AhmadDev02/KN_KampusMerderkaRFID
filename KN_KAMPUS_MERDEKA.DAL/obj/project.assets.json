@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.8": {
+    ".NETFramework,Version=v4.6.1": {
       "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -27,7 +27,7 @@
       },
       "KN_KAMPUS_MERDEKA.COMMON/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.8",
+        "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
@@ -39,7 +39,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.8/win": {
+    ".NETFramework,Version=v4.6.1/win": {
       "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -65,7 +65,7 @@
       },
       "KN_KAMPUS_MERDEKA.COMMON/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.8",
+        "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
@@ -77,7 +77,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.8/win-x64": {
+    ".NETFramework,Version=v4.6.1/win-x64": {
       "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -103,7 +103,7 @@
       },
       "KN_KAMPUS_MERDEKA.COMMON/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.8",
+        "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
@@ -115,7 +115,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.8/win-x86": {
+    ".NETFramework,Version=v4.6.1/win-x86": {
       "EntityFramework/6.2.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -141,7 +141,7 @@
       },
       "KN_KAMPUS_MERDEKA.COMMON/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.8",
+        "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
@@ -219,52 +219,47 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.8": [
+    ".NETFramework,Version=v4.6.1": [
       "EntityFramework >= 6.2.0",
       "KN_KAMPUS_MERDEKA.COMMON >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\taras\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\afaja\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\New folder\\KN_KAMPUS_MERDEKA\\KN_KAMPUS_MERDEKA.DAL\\KN_KAMPUS_MERDEKA.DAL.csproj",
+      "projectUniqueName": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.DAL\\KN_KAMPUS_MERDEKA.DAL.csproj",
       "projectName": "KN_KAMPUS_MERDEKA.DAL",
-      "projectPath": "D:\\New folder\\KN_KAMPUS_MERDEKA\\KN_KAMPUS_MERDEKA.DAL\\KN_KAMPUS_MERDEKA.DAL.csproj",
-      "packagesPath": "C:\\Users\\taras\\.nuget\\packages\\",
-      "outputPath": "D:\\New folder\\KN_KAMPUS_MERDEKA\\KN_KAMPUS_MERDEKA.DAL\\obj\\",
+      "projectPath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.DAL\\KN_KAMPUS_MERDEKA.DAL.csproj",
+      "packagesPath": "C:\\Users\\afaja\\.nuget\\packages\\",
+      "outputPath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\taras\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\afaja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net48"
+        "net461"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net48": {
+        "net461": {
           "projectReferences": {
-            "D:\\New folder\\KN_KAMPUS_MERDEKA\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj": {
-              "projectPath": "D:\\New folder\\KN_KAMPUS_MERDEKA\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj"
+            "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj": {
+              "projectPath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj"
             }
           }
         }
       }
     },
     "frameworks": {
-      "net48": {
+      "net461": {
         "dependencies": {
           "EntityFramework": {
             "target": "Package",

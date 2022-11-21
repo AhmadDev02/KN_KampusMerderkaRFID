@@ -174,7 +174,7 @@
                 width: '60%',
                 height: '100%',
                 scrolling: 'false',
-                href: '/system/lov/' + LOV,
+                href: '/Systems/LOV/' + LOV,
                 type: 'iframe',
                 autoSize: false,
                 afterClose: function () {

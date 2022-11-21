@@ -8,10 +8,11 @@
     <OutputType>Library</OutputType>
     <RootNamespace>KN_KAMPUS_MERDEKA.COMMON</RootNamespace>
     <AssemblyName>KN_KAMPUS_MERDEKA.COMMON</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,18 +53,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constant\Configuration.cs" />
+    <Compile Include="Dto\Request\dashboard\keyindumping\KeyInDumpingRequest.cs" />
+    <Compile Include="Dto\Request\dashboard\RFIDReader\RFIDReaderRequest.cs" />
     <Compile Include="Dto\Request\Systems\Menu\MenuRequest.cs" />
     <Compile Include="Dto\Request\Systems\Module\ModuleRequest.cs" />
     <Compile Include="Dto\Request\Systems\RoleAccess\RoleAccessRequest.cs" />
     <Compile Include="Dto\Request\Systems\Role\RoleRequest.cs" />
     <Compile Include="Dto\Request\Systems\UserRole\UserRoleRequest.cs" />
     <Compile Include="Dto\Request\Systems\User\UserRegister.cs" />
+    <Compile Include="Dto\Response\Dashboard\KeyInDumpingResponse.cs" />
+    <Compile Include="Dto\Response\Dashboard\RFIDReaderResponse.cs" />
     <Compile Include="Dto\Response\Systems\Menu\MenuResponse.cs" />
     <Compile Include="Dto\Response\Systems\Module\ModuleResponse.cs" />
     <Compile Include="Dto\Response\Systems\RoleAccess\RoleAccessResponse.cs" />
     <Compile Include="Dto\Response\Systems\Role\RoleResponse.cs" />
     <Compile Include="Dto\Response\Systems\UserRole\UserRoleResponse.cs" />
     <Compile Include="Dto\Response\Systems\User\UserResponse.cs" />
+    <Compile Include="Entity\Masters\mKeyInDumping.cs" />
+    <Compile Include="Entity\Masters\mRFID_Reader.cs" />
     <Compile Include="Entity\Systems\mMenu.cs" />
     <Compile Include="Entity\Systems\mModule.cs" />
     <Compile Include="Entity\Systems\mParameter_Detail.cs" />
@@ -102,7 +109,6 @@
   <ItemGroup>
     <Folder Include="Dto\Response\Masters\" />
     <Folder Include="Dto\Response\Transactions\" />
-    <Folder Include="Entity\Masters\" />
     <Folder Include="Entity\Transactions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

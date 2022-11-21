@@ -1,0 +1,212 @@
+﻿@using KN_KAMPUS_MERDEKA.BUSSLOGIC.CustomBL.Systems;
+
+@{
+    ViewBag.Title = "Key In Dumping";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Index", "Key In Dumping", FormMethod.Post, new { id = "frm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("txtHiddenObject")
+    @Html.Hidden("txtGUID")
+}
+
+
+@*INI Adalah Tomnol Input di Key In Dumping*@
+<div class="row" id="menuTableRow">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-outline card-blue">
+                <h1 class="card-title">
+                    <i class="fa fa-stream"></i> Proses Status Dumping
+                </h1>
+                @*<div class="card-tools">
+                        <button id="btnAddMenu" class="btn btn-success">
+                            <i class="fas fa-plus-square"></i> Tambah
+                        </button>
+                    </div>*@
+
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Nomor Bo</label>
+                            <input type="number" class="form-control uppercase" placeholder="Enter No BO " id="intNoBO">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Charges</label>
+                            <input type="number" class="form-control uppercase" placeholder="Enter Charges " id="txtCharges">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Nama Produk</label>
+                            <input type="text" class="form-control uppercase" placeholder="Enter Nama Produk " id="txtNamaProduk">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>PIC</label>
+                            <input type="text" class="form-control uppercase" placeholder="Enter PIC " id="txtPIC">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Dumping Line</label>
+                            <input type="text" class="form-control uppercase" placeholder="Enter Dumping Line " id="txtDumpingLine">
+                        </div>
+                    </div>
+
+                    <!--<div class="col-md-6">-->
+                    <!-- text input -->
+                    <!--<div class="form-group">
+                            <label>Start Time</label>
+                            <input type="time" class="form-control" value="" id="txtStartTime">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">-->
+                    <!-- text input -->
+                    <!--<div class="form-group">
+                            <label>End Time</label>
+                            <input type="time" class="form-control" value="" id="txtEndTime" />
+                        </div>
+                    </div>-->
+                    @*<div class="col-md-6">
+                            <label>Activity Dumping</label>
+                            <div class="form-group">
+                                <label class="switch">
+                                    <input type="checkbox" id="bitStatus">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>*@
+
+
+                </div>
+
+                <button class="btn btn-success  float-right m-1" id="btnSave">
+                    <i class="fa fa-save"></i> Save
+                </button>
+
+
+            </div>
+
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+
+@*INI Adalah Tabel di Key In Dumping*@
+<div class="row" id="menuTableRow">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-outline card-blue">
+                <div>
+                    <h3 class="text-center">Tabel Operasi Dumping</h3>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover table-striped" id="tableMenu">
+                    <thead>
+                        <tr>
+                            <th class="text-center">No BO</th>
+                            <th class="text-center">Charges</th>
+                            <th class="text-center">Nama Produk</th>
+                            <th class="text-center">PIC </th>
+                            <th class="text-center">Dumping Line</th>
+                            <th class="text-center">Start Time</th>
+                            <th class="text-center">End Time</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                    <li class="page-item"><a class="page-link" id="btnPrev">«</a></li>
+                    <li class="page-item"><a class="page-link" id="btnNext">»</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*INI Adalah Tabel History Key In Dumping*@
+<div class="row2" id="menuTableRow">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-outline card-blue">
+                <div>
+                    <h3 class="text-center">Tabel History Dumping</h3>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover table-striped" id="tableMenu">
+                    <thead>
+                        <tr>
+                            <th class="text-center">No BO</th>
+                            <th class="text-center">Charges</th>
+                            <th class="text-center">Nama Produk</th>
+                            <th class="text-center">PIC </th>
+                            <th class="text-center">Dumping Line</th>
+                            <th class="text-center">Start Time</th>
+                            <th class="text-center">End Time</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelbody"></tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                    <li class="page-item"><a class="page-link" id="btnPrev">«</a></li>
+                    <li class="page-item"><a class="page-link" id="btnNext">»</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.card -->
+    </div>
+</div>
+
+<!-- /.row -->
+@section scripts{
+    <script src="~/Assets/js/customs/Dashboard/KeyInDumping/keyindumpingscript.js?rand=@clsMMainCustomBL.generateParameter()"></script>
+    <script>
+            $(() => {
+                $(".search-bar").append(@Html.Partial("_Search"));
+                $inputSearch = $(".search-bar").find(".search-input");
+                $inputSearch.on('keyup', (e) => {
+                    if ($inputSearch.val().toString().length % 3 == 0 && $inputSearch.val().toString() != cari  || (e.key == 'Enter')) {
+                        cari = $inputSearch.val();
+                        searchKeyInDumping();
+                    }
+
+                })
+            });
+    </script>
+
+}
+

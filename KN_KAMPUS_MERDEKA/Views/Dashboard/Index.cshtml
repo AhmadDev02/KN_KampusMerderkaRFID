@@ -1,0 +1,126 @@
+﻿@*@{
+        ViewBag.Title = "Dashboard";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    @using (Html.BeginForm("Index", "Dashboard", FormMethod.Post, new { id = "frm" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("txtHiddenObject")
+        @Html.Hidden("txtGUID")
+    }*@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+
+<div class="row" id="menuTableRow">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-outline card-blue">
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-hover table-striped" id="tableMenu">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Line</th>
+                                <th class="text-center">No Bo</th>
+                                <th class="text-center">Nama Produk</th>
+                                <th class="text-center">Dumping</th>
+                                <th class="text-center">Mixing</th>
+                                <th class="text-center">QC</th>
+                                <th class="text-center">Filling</th>
+                                <th class="text-center">Wet</th>
+                                <th class="text-center">Dry</th>
+                            </tr>
+                        </thead>
+                    @*<tbody id="tbody">
+                        
+                    </tbody>*@
+                    <tbody>
+                        <tr>
+                            <th class="text-center" rowspan="3">D</th>
+                        </tr>
+                        <tr id="tbody">
+                        </tr>
+                    </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var has_had_focus = false;
+        var wsbroker = "localhost";  //mqtt websocket enabled broker
+        var wsport = 15675; // port for above
+
+        var client = new Paho.MQTT.Client(wsbroker, wsport, "/ws",
+            "bean_scan_web_client");
+        client.topic = "bean_scan"
+        client.onConnectionLost = function (responseObject) {
+            debug("CONNECTION LOST - " + responseObject.errorMessage);
+        };
+
+        //setInterval(myTimer, 1000);
+
+        //function myTimer() {
+        //    const d = new Date();
+        //    document.getElementById("waktu").innerHTML = d.toLocaleTimeString();
+        //}
+
+
+        client.onMessageArrived = function (message) {
+            debug("RECEIVE ON " + message.destinationName + " PAYLOAD " + message.payloadString);
+            var data = JSON.parse(message.payloadString);
+
+
+
+
+
+            if (data.tag == 'E2000020340F02652020EB3C' ) {
+                data.Code = 'BIN 002';
+            }
+            if (data.tag == 'E2000020340F0155200086C1' ) {
+                data.Code = 'BIN 001';
+            }
+            if (data.tag == 'E20000208804006725702B51') {
+                data.Code = 'BIN 003';
+            }
+            $("#tbody").append(`
+
+                         <td class="text-center">${data.Code}</td>
+                `);
+        };
+
+        var options = {
+            timeout: 3,
+            userName: 'IBC:admin',
+            password: 'admin123',
+            keepAliveInterval: 30,
+            onSuccess: function () {
+                debug("CONNECTION SUCCESS");
+                client.subscribe("bean_scan", { qos: 1 });
+            },
+            onFailure: function (message) {
+                debug("CONNECTION FAILURE - " + message.errorMessage);
+            }
+        };
+
+        //if (location.protocol == "https:") {
+        //    options.useSSL = true;
+        //}
+
+        function debug(log) {
+            console.log(log);
+        }
+        debug("CONNECT TO " + wsbroker + ":" + wsport);
+        client.connect(options);
+
+        
+    </script>
+
+}
+
+
+
+

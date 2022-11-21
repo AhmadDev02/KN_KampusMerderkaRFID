@@ -8,10 +8,11 @@
     <OutputType>Library</OutputType>
     <RootNamespace>KN_KAMPUS_MERDEKA.DAL</RootNamespace>
     <AssemblyName>KN_KAMPUS_MERDEKA.DAL</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,6 +65,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KampusMerdeka.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Edmx\mBIN.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mKeyInDumping.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
     <Compile Include="Edmx\mMenu.cs">
       <DependentUpon>KampusMerdeka.tt</DependentUpon>
     </Compile>
@@ -74,6 +81,15 @@
       <DependentUpon>KampusMerdeka.tt</DependentUpon>
     </Compile>
     <Compile Include="Edmx\mParameter_Header.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mRFID_Lokasi.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mRFID_Reader.cs">
+      <DependentUpon>KampusMerdeka.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Edmx\mRFID_Tag.cs">
       <DependentUpon>KampusMerdeka.tt</DependentUpon>
     </Compile>
     <Compile Include="Edmx\mRole.cs">
@@ -103,11 +119,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <EntityDeploy Include="Edmx\KampusMerdeka.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>KampusMerdeka.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.config" />
     <None Include="Edmx\KampusMerdeka.edmx.diagram">
       <DependentUpon>KampusMerdeka.edmx</DependentUpon>
     </None>

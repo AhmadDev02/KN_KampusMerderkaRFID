@@ -12,3 +12,17 @@ D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.DAL\obj\Debug\KN_KAMPUS_MERDEK
 D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.DAL\obj\Debug\KN_KAMPUS_MERDEKA.DAL.csproj.CopyComplete
 D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.DAL\obj\Debug\KN_KAMPUS_MERDEKA.DAL.dll
 D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.DAL\obj\Debug\KN_KAMPUS_MERDEKA.DAL.pdb
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\obj\Debug\KN_KAMPUS_MERDEKA.DAL.csproj.AssemblyReference.cache
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\obj\Debug\KN_KAMPUS_MERDEKA.DAL.csproj.CoreCompileInputs.cache
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\bin\Debug\KN_KAMPUS_MERDEKA.DAL.dll.config
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\bin\Debug\KN_KAMPUS_MERDEKA.DAL.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\bin\Debug\KN_KAMPUS_MERDEKA.DAL.pdb
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\bin\Debug\EntityFramework.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\bin\Debug\Newtonsoft.Json.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\bin\Debug\KN_KAMPUS_MERDEKA.COMMON.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\bin\Debug\KN_KAMPUS_MERDEKA.COMMON.pdb
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\bin\Debug\KN_KAMPUS_MERDEKA.COMMON.dll.config
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\obj\Debug\KN_KAMPUS_MERDEKA.DAL.csproj.CopyComplete
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\obj\Debug\KN_KAMPUS_MERDEKA.DAL.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.DAL\obj\Debug\KN_KAMPUS_MERDEKA.DAL.pdb

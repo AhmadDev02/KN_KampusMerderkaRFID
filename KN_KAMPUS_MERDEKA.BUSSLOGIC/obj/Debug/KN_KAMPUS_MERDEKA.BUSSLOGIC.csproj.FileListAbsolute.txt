@@ -15,3 +15,21 @@ D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.BUSSLOGIC\obj\Debug\KN_KAMPUS_
 D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.BUSSLOGIC\obj\Debug\KN_KAMPUS_MERDEKA.BUSSLOGIC.csproj.CopyComplete
 D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.BUSSLOGIC\obj\Debug\KN_KAMPUS_MERDEKA.BUSSLOGIC.dll
 D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.BUSSLOGIC\obj\Debug\KN_KAMPUS_MERDEKA.BUSSLOGIC.pdb
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\obj\Debug\KN_KAMPUS_MERDEKA.BUSSLOGIC.csproj.AssemblyReference.cache
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\obj\Debug\KN_KAMPUS_MERDEKA.BUSSLOGIC.csproj.CoreCompileInputs.cache
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\CustomBL\Masters\mKeyInDumpingCustomBL.cs
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\KN_KAMPUS_MERDEKA.BUSSLOGIC.dll.config
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\KN_KAMPUS_MERDEKA.BUSSLOGIC.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\KN_KAMPUS_MERDEKA.BUSSLOGIC.pdb
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\EntityFramework.SqlServer.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\EntityFramework.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\Newtonsoft.Json.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\KN_KAMPUS_MERDEKA.COMMON.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\KN_KAMPUS_MERDEKA.DAL.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\KN_KAMPUS_MERDEKA.COMMON.pdb
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\KN_KAMPUS_MERDEKA.COMMON.dll.config
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\KN_KAMPUS_MERDEKA.DAL.pdb
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\bin\Debug\KN_KAMPUS_MERDEKA.DAL.dll.config
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\obj\Debug\KN_KAMPUS_MERDEKA.BUSSLOGIC.csproj.CopyComplete
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\obj\Debug\KN_KAMPUS_MERDEKA.BUSSLOGIC.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.BUSSLOGIC\obj\Debug\KN_KAMPUS_MERDEKA.BUSSLOGIC.pdb

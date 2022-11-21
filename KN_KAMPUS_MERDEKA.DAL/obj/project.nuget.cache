@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "vbKH9m1/ElnnWzrilUoK7fhaQ705VhpzBToaJkJptbSlGwnZKvAt8+sR4I6u6jAQ1TMznn3omXivaiJX0Wy8Ww==",
+  "dgSpecHash": "RJHpzIJeeCaVcz1g4HETh/wJNDMtSQZpMBVtfDg9o9jibLZwgg7QusstAquOmQZiVZved7QxoY1ZdYVAZaTJGg==",
   "success": true,
-  "projectFilePath": "D:\\New folder\\KN_KAMPUS_MERDEKA\\KN_KAMPUS_MERDEKA.DAL\\KN_KAMPUS_MERDEKA.DAL.csproj",
+  "projectFilePath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.DAL\\KN_KAMPUS_MERDEKA.DAL.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\taras\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512",
-    "C:\\Users\\taras\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\afaja\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512",
+    "C:\\Users\\afaja\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }
