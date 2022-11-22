@@ -7,12 +7,12 @@ D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.COMMON\obj\Debug\KN_KAMPUS_MER
 D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.COMMON\obj\Debug\KN_KAMPUS_MERDEKA.COMMON.dll
 D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.COMMON\obj\Debug\KN_KAMPUS_MERDEKA.COMMON.pdb
 D:\New folder\KN_KAMPUS_MERDEKA\KN_KAMPUS_MERDEKA.COMMON\obj\Debug\KN_KAMPUS_MERDEKA.COMMON.csproj.AssemblyReference.cache
-D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.COMMON\obj\Debug\KN_KAMPUS_MERDEKA.COMMON.csproj.AssemblyReference.cache
-D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.COMMON\obj\Debug\KN_KAMPUS_MERDEKA.COMMON.csproj.CoreCompileInputs.cache
 D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.COMMON\bin\Debug\KN_KAMPUS_MERDEKA.COMMON.dll.config
 D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.COMMON\bin\Debug\KN_KAMPUS_MERDEKA.COMMON.dll
 D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.COMMON\bin\Debug\KN_KAMPUS_MERDEKA.COMMON.pdb
 D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.COMMON\bin\Debug\Newtonsoft.Json.dll
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.COMMON\obj\Debug\KN_KAMPUS_MERDEKA.COMMON.csproj.AssemblyReference.cache
+D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.COMMON\obj\Debug\KN_KAMPUS_MERDEKA.COMMON.csproj.CoreCompileInputs.cache
 D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.COMMON\obj\Debug\KN_KAMPUS_MERDEKA.COMMON.csproj.CopyComplete
 D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.COMMON\obj\Debug\KN_KAMPUS_MERDEKA.COMMON.dll
 D:\KALBE\ProjectMagang\kn_kampus_merdeka\KN_KAMPUS_MERDEKA.COMMON\obj\Debug\KN_KAMPUS_MERDEKA.COMMON.pdb

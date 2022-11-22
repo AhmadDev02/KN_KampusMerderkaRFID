@@ -9,10 +9,11 @@ using KN_KAMPUS_MERDEKA.COMMON.Entity.Masters;
 namespace KN_KAMPUS_MERDEKA.COMMON.Dto.Response.Dashboard
 {
     [DataContract]
-   public class RFIDReaderResponse
+    public class RFIDReaderResponse
     {
         public RFIDReaderResponse() { }
-        public RFIDReaderResponse(mRFID_Reader rfidReader) {
+        public RFIDReaderResponse(mRFID_Reader rfidReader)
+        {
             this.intReader_id = rfidReader.intReader_id;
             this.txtIP_addreess = rfidReader.txtIP_addreess;
             this.intLokasiID = rfidReader.intLokasiID.HasValue ? rfidReader.intLokasiID.Value : 0;

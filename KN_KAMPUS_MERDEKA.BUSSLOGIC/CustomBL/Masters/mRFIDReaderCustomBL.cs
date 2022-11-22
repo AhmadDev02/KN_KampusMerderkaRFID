@@ -13,7 +13,8 @@ namespace KN_KAMPUS_MERDEKA.BUSSLOGIC.CustomBL.Masters
     public static class mRFIDReaderCustomBL
     {
         //For Get IP
-        public static string SaveRFIDReader(string txtIP_addreess) {
+        public static string SaveRFIDReader(string txtIP_addreess)
+        {
 
             KampusMerdekaEntities dObjContext = null;
             DbContextTransaction dObjTran = null;
@@ -22,7 +23,7 @@ namespace KN_KAMPUS_MERDEKA.BUSSLOGIC.CustomBL.Masters
             {
                 dObjContext = new KampusMerdekaEntities(EFClientUtility.GetConnectionString());
                 dObjTran = dObjContext.Database.BeginTransaction();
-                SaveRFIDReader(txtIP_addreess,dObjContext,dObjTran);
+                SaveRFIDReader(txtIP_addreess, dObjContext, dObjTran);
                 dObjTran.Commit();
                 return txtIP_addreess;
             }
@@ -37,13 +38,13 @@ namespace KN_KAMPUS_MERDEKA.BUSSLOGIC.CustomBL.Masters
             }
 
         }
-        public static string SaveRFIDReader(string txtIP_addreess ,KampusMerdekaEntities dObjContext, DbContextTransaction dObjTran)
+        public static string SaveRFIDReader(string txtIP_addreess, KampusMerdekaEntities dObjContext, DbContextTransaction dObjTran)
         {
             mRFID_Reader reader = new mRFID_Reader();
             reader.txtIP_addreess = txtIP_addreess;
 
             dObjContext.mRFID_Reader.Add(reader);
-                dObjContext.SaveChanges();
+            dObjContext.SaveChanges();
             //}
             return reader.txtIP_addreess;
         }

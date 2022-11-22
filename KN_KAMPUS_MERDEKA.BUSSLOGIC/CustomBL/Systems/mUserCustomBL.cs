@@ -49,7 +49,6 @@ namespace KN_KAMPUS_MERDEKA.BUSSLOGIC.CustomBL.Systems
             dat.txtInsertedBy = txtUserID;
             dat.dtmInsertedDate = DateTime.Now;
 
-
             // Set GUID.
             SetGUIDToObject(ref dat, txtGUID);
 
