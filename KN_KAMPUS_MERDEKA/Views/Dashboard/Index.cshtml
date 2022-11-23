@@ -22,7 +22,7 @@
                                 <th class="text-center">Line</th>
                                 <th class="text-center">No Bo</th>
                                 <th class="text-center">Nama Produk</th>
-                                <th class="text-center">Dumping</th>
+                                <th class="text-center" id="dumping"></th>
                                 <th class="text-center">Mixing</th>
                                 <th class="text-center">QC</th>
                                 <th class="text-center">Filling</th>
@@ -33,13 +33,13 @@
                     @*<tbody id="tbody">
                         
                     </tbody>*@
-                    <tbody>
+                    @*<tbody>
                         <tr>
                             <th class="text-center" rowspan="3">D</th>
                         </tr>
                         <tr id="tbody">
                         </tr>
-                    </tbody>
+                    </tbody>*@
 
                     </table>
                 </div>
@@ -73,23 +73,36 @@
             debug("RECEIVE ON " + message.destinationName + " PAYLOAD " + message.payloadString);
             var data = JSON.parse(message.payloadString);
 
-
-
-
-
-            if (data.tag == 'E2000020340F02652020EB3C' ) {
-                data.Code = 'BIN 002';
+            if (data.tag == 'E2000020340F02652020EB3C') {
+                 var code2 = 'BIN 02';
             }
-            if (data.tag == 'E2000020340F0155200086C1' ) {
-                data.Code = 'BIN 001';
+            if (data.tag == 'E2000020340F0155200086C1') {
+                
+                var code1 = ' BIN 001'
             }
+            if (data.ip == '10.171.50.154') {
+                data.Code = code2 || code1;
+            }
+
+            $("#dumping").append(`
+                <tr>
+                   <th class=""text-center>${data.Code}</th>
+                </tr>
+        
+             `);
+
+
+
+           
+           
             if (data.tag == 'E20000208804006725702B51') {
                 data.Code = 'BIN 003';
             }
             $("#tbody").append(`
 
-                         <td class="text-center">${data.Code}</td>
+                         <td class="text-center">${code2}</td>
                 `);
+
         };
 
         var options = {
