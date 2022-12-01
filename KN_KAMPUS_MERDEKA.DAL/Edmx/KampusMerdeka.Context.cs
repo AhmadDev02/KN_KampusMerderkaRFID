@@ -7,13 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KN_KAMPUS_MERDEKA.DAL
+namespace KN_KAMPUS_MERDEKA.DAL.Edmx
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using KN_KAMPUS_MERDEKA.DAL.Edmx;
-
+    
     public partial class KampusMerdekaEntities : DbContext
     {
         public KampusMerdekaEntities()
@@ -39,9 +38,6 @@ namespace KN_KAMPUS_MERDEKA.DAL
         public virtual DbSet<TrDebugEmail> TrDebugEmails { get; set; }
         public virtual DbSet<trDebugError> trDebugErrors { get; set; }
         public virtual DbSet<mKeyInDumping> mKeyInDumpings { get; set; }
-        public virtual DbSet<mBIN> mBINs { get; set; }
-        public virtual DbSet<mRFID_Lokasi> mRFID_Lokasi { get; set; }
-        public virtual DbSet<mRFID_Reader> mRFID_Reader { get; set; }
         public virtual DbSet<mRFID_Tag> mRFID_Tag { get; set; }
     }
 }

@@ -2187,7 +2187,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\LOV\Index.cshtml" />
     <Content Include="Views\LOV\LOV.cshtml" />
     <Content Include="Views\LOV\Menu.cshtml" />
@@ -2233,6 +2232,7 @@
     <Folder Include="Controllers\Systems\SystemConfiguration\" />
     <Folder Include="Controllers\Systems\SystemLanguage\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Account\" />
     <Folder Include="Views\Error\" />
     <Folder Include="Views\Parameter\" />
     <Folder Include="Views\SystemConfiguration\" />

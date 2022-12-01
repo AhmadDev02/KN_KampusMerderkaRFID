@@ -5,30 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="KampusMerdekaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="mBIN">
-          <Key>
-            <PropertyRef Name="intBIN_id" />
-          </Key>
-          <Property Name="intBIN_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="intBIN_NO" Type="int" />
-          <Property Name="intTag_id" Type="int" />
-          <Property Name="bitActive" Type="bit" />
-          <Property Name="txtGUID" Type="varchar" MaxLength="100" />
-          <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
-          <Property Name="dtmInsertedBy" Type="datetime" />
-          <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
-          <Property Name="dtmUpdatedBy" Type="datetime" />
-        </EntityType>
         <EntityType Name="mKeyInDumping">
           <Key>
             <PropertyRef Name="intKeyInDumpingID" />
           </Key>
           <Property Name="intKeyInDumpingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="intNoBO" Type="int" />
-          <Property Name="txtCharges" Type="varchar" MaxLength="50" />
+          <Property Name="txtCharges" Type="varchar" MaxLength="100" />
           <Property Name="txtNamaProduk" Type="varchar" MaxLength="100" />
-          <Property Name="txtPIC" Type="varchar" MaxLength="50" />
-          <Property Name="txtDumpingLine" Type="varchar" MaxLength="50" />
+          <Property Name="txtPIC" Type="varchar" MaxLength="100" />
+          <Property Name="txtDumpingLine" Type="varchar" MaxLength="100" />
           <Property Name="txtStartTime" Type="varchar" MaxLength="50" />
           <Property Name="txtEndTime" Type="varchar" MaxLength="50" />
           <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
@@ -36,8 +22,7 @@
           <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
           <Property Name="dtmUpdatedDate" Type="datetime" />
           <Property Name="txtGUID" Type="varchar" MaxLength="100" />
-          <Property Name="txtStatus" Type="varchar" MaxLength="50" />
-          <Property Name="bitStatus" Type="bit" />
+          <Property Name="txtStatus" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="mMenu">
           <Key>
@@ -94,36 +79,6 @@
           <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
           <Property Name="dtmUpdatedDate" Type="datetime" />
           <Property Name="txtGUID" Type="varchar" MaxLength="100" />
-        </EntityType>
-        <EntityType Name="mRFID_Lokasi">
-          <Key>
-            <PropertyRef Name="intLokasiID" />
-          </Key>
-          <Property Name="intLokasiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="txtLokasi" Type="varchar" MaxLength="100" />
-          <Property Name="txtDetailLokasi" Type="varchar" MaxLength="100" />
-          <Property Name="bitActive" Type="bit" />
-          <Property Name="txtGUID" Type="varchar" MaxLength="100" />
-          <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
-          <Property Name="dtmInsertedBy" Type="datetime" />
-          <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
-          <Property Name="dtmUpdatedBy" Type="datetime" />
-        </EntityType>
-        <EntityType Name="mRFID_Reader">
-          <Key>
-            <PropertyRef Name="intReader_id" />
-          </Key>
-          <Property Name="intReader_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="txtIP_addreess" Type="varchar" MaxLength="50" />
-          <Property Name="intLokasiID" Type="int" />
-          <Property Name="intPowerJarak" Type="int" />
-          <Property Name="txtCategory" Type="varchar" MaxLength="100" />
-          <Property Name="intPort" Type="int" />
-          <Property Name="txtGUID" Type="varchar" MaxLength="100" />
-          <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
-          <Property Name="dtmInsertedBy" Type="datetime" />
-          <Property Name="txtUpdatedBy" Type="varchar" MaxLength="100" />
-          <Property Name="dtmUpdatedBy" Type="datetime" />
         </EntityType>
         <EntityType Name="mRFID_Tag">
           <Key>
@@ -277,14 +232,11 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="KampusMerdekaModelStoreContainer">
-          <EntitySet Name="mBIN" EntityType="Self.mBIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mKeyInDumping" EntityType="Self.mKeyInDumping" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mMenu" EntityType="Self.mMenu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mModule" EntityType="Self.mModule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mParameter_Detail" EntityType="Self.mParameter_Detail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mParameter_Header" EntityType="Self.mParameter_Header" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="mRFID_Lokasi" EntityType="Self.mRFID_Lokasi" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="mRFID_Reader" EntityType="Self.mRFID_Reader" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mRFID_Tag" EntityType="Self.mRFID_Tag" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mRole" EntityType="Self.mRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mRoleAccess" EntityType="Self.mRoleAccess" Schema="dbo" store:Type="Tables" />
@@ -507,9 +459,6 @@
           </AssociationSet>
           <EntitySet Name="trDebugErrors" EntityType="KampusMerdekaModel.trDebugError" />
           <EntitySet Name="mKeyInDumpings" EntityType="KampusMerdekaModel.mKeyInDumping" />
-          <EntitySet Name="mBINs" EntityType="KampusMerdekaModel.mBIN" />
-          <EntitySet Name="mRFID_Lokasi" EntityType="KampusMerdekaModel.mRFID_Lokasi" />
-          <EntitySet Name="mRFID_Reader" EntityType="KampusMerdekaModel.mRFID_Reader" />
           <EntitySet Name="mRFID_Tag" EntityType="KampusMerdekaModel.mRFID_Tag" />
         </EntityContainer>
         <EntityType Name="trDebugError">
@@ -528,10 +477,10 @@
           </Key>
           <Property Name="intKeyInDumpingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="intNoBO" Type="Int32" />
-          <Property Name="txtCharges" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txtCharges" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="txtNamaProduk" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="txtPIC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="txtDumpingLine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="txtPIC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="txtDumpingLine" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="txtStartTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="txtEndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -539,52 +488,7 @@
           <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="dtmUpdatedDate" Type="DateTime" Precision="3" />
           <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="txtStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="bitStatus" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="mBIN">
-          <Key>
-            <PropertyRef Name="intBIN_id" />
-          </Key>
-          <Property Name="intBIN_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="intBIN_NO" Type="Int32" />
-          <Property Name="intTag_id" Type="Int32" />
-          <Property Name="bitActive" Type="Boolean" />
-          <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="dtmInsertedBy" Type="DateTime" Precision="3" />
-          <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="dtmUpdatedBy" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="mRFID_Lokasi">
-          <Key>
-            <PropertyRef Name="intLokasiID" />
-          </Key>
-          <Property Name="intLokasiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="txtLokasi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="txtDetailLokasi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="bitActive" Type="Boolean" />
-          <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="dtmInsertedBy" Type="DateTime" Precision="3" />
-          <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="dtmUpdatedBy" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="mRFID_Reader">
-          <Key>
-            <PropertyRef Name="intReader_id" />
-          </Key>
-          <Property Name="intReader_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="txtIP_addreess" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="intLokasiID" Type="Int32" />
-          <Property Name="intPowerJarak" Type="Int32" />
-          <Property Name="txtCategory" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="intPort" Type="Int32" />
-          <Property Name="txtGUID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="dtmInsertedBy" Type="DateTime" Precision="3" />
-          <Property Name="txtUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="dtmUpdatedBy" Type="DateTime" Precision="3" />
+          <Property Name="txtStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="mRFID_Tag">
           <Key>
@@ -799,7 +703,6 @@
           <EntitySetMapping Name="mKeyInDumpings">
             <EntityTypeMapping TypeName="KampusMerdekaModel.mKeyInDumping">
               <MappingFragment StoreEntitySet="mKeyInDumping">
-                <ScalarProperty Name="bitStatus" ColumnName="bitStatus" />
                 <ScalarProperty Name="txtStatus" ColumnName="txtStatus" />
                 <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
                 <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
@@ -814,53 +717,6 @@
                 <ScalarProperty Name="txtCharges" ColumnName="txtCharges" />
                 <ScalarProperty Name="intNoBO" ColumnName="intNoBO" />
                 <ScalarProperty Name="intKeyInDumpingID" ColumnName="intKeyInDumpingID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="mBINs">
-            <EntityTypeMapping TypeName="KampusMerdekaModel.mBIN">
-              <MappingFragment StoreEntitySet="mBIN">
-                <ScalarProperty Name="dtmUpdatedBy" ColumnName="dtmUpdatedBy" />
-                <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
-                <ScalarProperty Name="dtmInsertedBy" ColumnName="dtmInsertedBy" />
-                <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
-                <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
-                <ScalarProperty Name="bitActive" ColumnName="bitActive" />
-                <ScalarProperty Name="intTag_id" ColumnName="intTag_id" />
-                <ScalarProperty Name="intBIN_NO" ColumnName="intBIN_NO" />
-                <ScalarProperty Name="intBIN_id" ColumnName="intBIN_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="mRFID_Lokasi">
-            <EntityTypeMapping TypeName="KampusMerdekaModel.mRFID_Lokasi">
-              <MappingFragment StoreEntitySet="mRFID_Lokasi">
-                <ScalarProperty Name="dtmUpdatedBy" ColumnName="dtmUpdatedBy" />
-                <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
-                <ScalarProperty Name="dtmInsertedBy" ColumnName="dtmInsertedBy" />
-                <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
-                <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
-                <ScalarProperty Name="bitActive" ColumnName="bitActive" />
-                <ScalarProperty Name="txtDetailLokasi" ColumnName="txtDetailLokasi" />
-                <ScalarProperty Name="txtLokasi" ColumnName="txtLokasi" />
-                <ScalarProperty Name="intLokasiID" ColumnName="intLokasiID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="mRFID_Reader">
-            <EntityTypeMapping TypeName="KampusMerdekaModel.mRFID_Reader">
-              <MappingFragment StoreEntitySet="mRFID_Reader">
-                <ScalarProperty Name="dtmUpdatedBy" ColumnName="dtmUpdatedBy" />
-                <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
-                <ScalarProperty Name="dtmInsertedBy" ColumnName="dtmInsertedBy" />
-                <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
-                <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
-                <ScalarProperty Name="intPort" ColumnName="intPort" />
-                <ScalarProperty Name="txtCategory" ColumnName="txtCategory" />
-                <ScalarProperty Name="intPowerJarak" ColumnName="intPowerJarak" />
-                <ScalarProperty Name="intLokasiID" ColumnName="intLokasiID" />
-                <ScalarProperty Name="txtIP_addreess" ColumnName="txtIP_addreess" />
-                <ScalarProperty Name="intReader_id" ColumnName="intReader_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

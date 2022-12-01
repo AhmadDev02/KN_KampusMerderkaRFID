@@ -195,7 +195,6 @@
     <EntitySetMapping Name="mKeyInDumpings">
       <EntityTypeMapping TypeName="KampusMerdekaModel.mKeyInDumping">
         <MappingFragment StoreEntitySet="mKeyInDumping">
-          <ScalarProperty Name="bitStatus" ColumnName="bitStatus" />
           <ScalarProperty Name="txtStatus" ColumnName="txtStatus" />
           <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
           <ScalarProperty Name="dtmUpdatedDate" ColumnName="dtmUpdatedDate" />
@@ -210,53 +209,6 @@
           <ScalarProperty Name="txtCharges" ColumnName="txtCharges" />
           <ScalarProperty Name="intNoBO" ColumnName="intNoBO" />
           <ScalarProperty Name="intKeyInDumpingID" ColumnName="intKeyInDumpingID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="mBINs">
-      <EntityTypeMapping TypeName="KampusMerdekaModel.mBIN">
-        <MappingFragment StoreEntitySet="mBIN">
-          <ScalarProperty Name="dtmUpdatedBy" ColumnName="dtmUpdatedBy" />
-          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
-          <ScalarProperty Name="dtmInsertedBy" ColumnName="dtmInsertedBy" />
-          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
-          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
-          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
-          <ScalarProperty Name="intTag_id" ColumnName="intTag_id" />
-          <ScalarProperty Name="intBIN_NO" ColumnName="intBIN_NO" />
-          <ScalarProperty Name="intBIN_id" ColumnName="intBIN_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="mRFID_Lokasi">
-      <EntityTypeMapping TypeName="KampusMerdekaModel.mRFID_Lokasi">
-        <MappingFragment StoreEntitySet="mRFID_Lokasi">
-          <ScalarProperty Name="dtmUpdatedBy" ColumnName="dtmUpdatedBy" />
-          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
-          <ScalarProperty Name="dtmInsertedBy" ColumnName="dtmInsertedBy" />
-          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
-          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
-          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
-          <ScalarProperty Name="txtDetailLokasi" ColumnName="txtDetailLokasi" />
-          <ScalarProperty Name="txtLokasi" ColumnName="txtLokasi" />
-          <ScalarProperty Name="intLokasiID" ColumnName="intLokasiID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="mRFID_Reader">
-      <EntityTypeMapping TypeName="KampusMerdekaModel.mRFID_Reader">
-        <MappingFragment StoreEntitySet="mRFID_Reader">
-          <ScalarProperty Name="dtmUpdatedBy" ColumnName="dtmUpdatedBy" />
-          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
-          <ScalarProperty Name="dtmInsertedBy" ColumnName="dtmInsertedBy" />
-          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
-          <ScalarProperty Name="txtGUID" ColumnName="txtGUID" />
-          <ScalarProperty Name="intPort" ColumnName="intPort" />
-          <ScalarProperty Name="txtCategory" ColumnName="txtCategory" />
-          <ScalarProperty Name="intPowerJarak" ColumnName="intPowerJarak" />
-          <ScalarProperty Name="intLokasiID" ColumnName="intLokasiID" />
-          <ScalarProperty Name="txtIP_addreess" ColumnName="txtIP_addreess" />
-          <ScalarProperty Name="intReader_id" ColumnName="intReader_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

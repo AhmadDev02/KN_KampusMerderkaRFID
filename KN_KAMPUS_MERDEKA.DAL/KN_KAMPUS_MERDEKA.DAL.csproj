@@ -65,9 +65,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KampusMerdeka.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Edmx\mBIN.cs">
-      <DependentUpon>KampusMerdeka.tt</DependentUpon>
-    </Compile>
     <Compile Include="Edmx\mKeyInDumping.cs">
       <DependentUpon>KampusMerdeka.tt</DependentUpon>
     </Compile>
@@ -81,12 +78,6 @@
       <DependentUpon>KampusMerdeka.tt</DependentUpon>
     </Compile>
     <Compile Include="Edmx\mParameter_Header.cs">
-      <DependentUpon>KampusMerdeka.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Edmx\mRFID_Lokasi.cs">
-      <DependentUpon>KampusMerdeka.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Edmx\mRFID_Reader.cs">
       <DependentUpon>KampusMerdeka.tt</DependentUpon>
     </Compile>
     <Compile Include="Edmx\mRFID_Tag.cs">

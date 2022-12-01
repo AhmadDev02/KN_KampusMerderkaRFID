@@ -19,10 +19,7 @@
         <AssociationConnector Association="KampusMerdekaModel.FK__mParamete__intPa__30F848ED" ManuallyRouted="false" />
         <EntityTypeShape EntityType="KampusMerdekaModel.trDebugError" Width="1.5" PointX="7.375" PointY="8.75" />
         <EntityTypeShape EntityType="KampusMerdekaModel.mKeyInDumping" Width="1.5" PointX="9.375" PointY="0.75" />
-        <EntityTypeShape EntityType="KampusMerdekaModel.mBIN" Width="1.5" PointX="15.375" PointY="1.25" />
-        <EntityTypeShape EntityType="KampusMerdekaModel.mRFID_Lokasi" Width="1.5" PointX="9.125" PointY="10.125" />
-        <EntityTypeShape EntityType="KampusMerdekaModel.mRFID_Reader" Width="1.5" PointX="11.5" PointY="1.125" />
-        <EntityTypeShape EntityType="KampusMerdekaModel.mRFID_Tag" Width="1.5" PointX="13.375" PointY="1.25" />
+        <EntityTypeShape EntityType="KampusMerdekaModel.mRFID_Tag" Width="1.5" PointX="11.625" PointY="1.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N5nRWbFkVBiQv+Az9zbTWn9rd5TSd7ve0Dx6kLwkPWgqlxtQ5+EVyxxzovtpscbSJIzUDIlmz4Ab6gwXBTOuYw==",
+  "dgSpecHash": "9FmpRpJt6woELpLO7VX0j5xBDKdY8M35d4XcEWTr2BDtgAMVqOCkUsQAQ68YY+rxbELP7eXNb7H8QGI2vvlDew==",
   "success": true,
-  "projectFilePath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.BUSSLOGIC\\KN_KAMPUS_MERDEKA.BUSSLOGIC.csproj",
+  "projectFilePath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdek_02\\KN_KampusMerderkaRFID\\KN_KAMPUS_MERDEKA.BUSSLOGIC\\KN_KAMPUS_MERDEKA.BUSSLOGIC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\afaja\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\afaja\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"

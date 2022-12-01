@@ -1,4 +1,4 @@
-﻿@*@{
+﻿@{
         ViewBag.Title = "Dashboard";
         Layout = "~/Views/Shared/_Layout.cshtml";
     }
@@ -7,7 +7,7 @@
         @Html.AntiForgeryToken()
         @Html.Hidden("txtHiddenObject")
         @Html.Hidden("txtGUID")
-    }*@
+    }
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
 
@@ -22,24 +22,35 @@
                                 <th class="text-center">Line</th>
                                 <th class="text-center">No Bo</th>
                                 <th class="text-center">Nama Produk</th>
-                                <th class="text-center" id="dumping"></th>
+                                <th class="text-center">Dumping</th>
                                 <th class="text-center">Mixing</th>
                                 <th class="text-center">QC</th>
                                 <th class="text-center">Filling</th>
                                 <th class="text-center">Wet</th>
                                 <th class="text-center">Dry</th>
                             </tr>
+                            <tr>
+                                <th class="text-center"></th>
+                                <th class="text-center"></th>
+                                <th class="text-center"></th>
+                                <th class="text-center" id="dumping"></th>
+                                <th class="text-center"></th>
+                                <th class="text-center"></th>
+                                <th class="text-center"></th>
+                                <th class="text-center"></th>
+                                <th class="text-center"></th>
+                            </tr>
                         </thead>
-                    @*<tbody id="tbody">
-                        
-                    </tbody>*@
-                    @*<tbody>
-                        <tr>
-                            <th class="text-center" rowspan="3">D</th>
-                        </tr>
-                        <tr id="tbody">
-                        </tr>
-                    </tbody>*@
+                        @*<tbody id="tbody">
+
+                            </tbody>*@
+                        @*<tbody>
+                                <tr>
+                                    <th class="text-center" rowspan="3">D</th>
+                                </tr>
+                                <tr id="tbody">
+                                </tr>
+                            </tbody>*@
 
                     </table>
                 </div>
@@ -56,17 +67,10 @@
 
         var client = new Paho.MQTT.Client(wsbroker, wsport, "/ws",
             "bean_scan_web_client");
-        client.topic = "bean_scan"
+        client.topic = "bean_scan";
         client.onConnectionLost = function (responseObject) {
             debug("CONNECTION LOST - " + responseObject.errorMessage);
         };
-
-        //setInterval(myTimer, 1000);
-
-        //function myTimer() {
-        //    const d = new Date();
-        //    document.getElementById("waktu").innerHTML = d.toLocaleTimeString();
-        //}
 
 
         client.onMessageArrived = function (message) {
@@ -74,41 +78,31 @@
             var data = JSON.parse(message.payloadString);
 
             if (data.tag == 'E2000020340F02652020EB3C') {
-                 var code2 = 'BIN 02';
+                var code2 = 'BIN 002';
             }
             if (data.tag == 'E2000020340F0155200086C1') {
-                
                 var code1 = ' BIN 001'
             }
+            if (data.tag == 'E20000208804006725702B51') {
+                var code3 = 'BIN 003';
+            }
             if (data.ip == '10.171.50.154') {
-                data.Code = code2 || code1;
+                data.Code = code2 || code1 || code3;
+                CodeDumping = data.Code;
             }
 
             $("#dumping").append(`
-                <tr>
-                   <th class=""text-center>${data.Code}</th>
-                </tr>
-        
-             `);
+                    <tr>
+                       <th class=""text-center>${CodeDumping}</th>
+                    </tr>
 
-
-
-           
-           
-            if (data.tag == 'E20000208804006725702B51') {
-                data.Code = 'BIN 003';
-            }
-            $("#tbody").append(`
-
-                         <td class="text-center">${code2}</td>
-                `);
-
+                 `);
         };
 
         var options = {
             timeout: 3,
             userName: 'IBC:admin',
-            password: 'admin123',
+            password: 'admin',
             keepAliveInterval: 30,
             onSuccess: function () {
                 debug("CONNECTION SUCCESS");
@@ -129,11 +123,10 @@
         debug("CONNECT TO " + wsbroker + ":" + wsport);
         client.connect(options);
 
-        
+
     </script>
 
 }
-
 
 
 

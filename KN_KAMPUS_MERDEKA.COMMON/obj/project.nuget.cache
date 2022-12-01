@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bNZwIFEvagI6CCBldcP39i31IXmX3vkoufnUgE9fA9BT4xlg09JYo7g27YRZ3+Cni+AdORBDf5QrD1cIPE4VDQ==",
+  "dgSpecHash": "13hbvTVkD9ZRJiqem1a9aU9vHzeAFGcOBn5VW8rwXQIS5n6GrgvyQy5oQLXCArmDYlDFYakkOTm+jpYGEEOa2g==",
   "success": true,
-  "projectFilePath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj",
+  "projectFilePath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdek_02\\KN_KampusMerderkaRFID\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\afaja\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],

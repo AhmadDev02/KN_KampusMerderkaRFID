@@ -86,11 +86,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj",
+      "projectUniqueName": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdek_02\\KN_KampusMerderkaRFID\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj",
       "projectName": "KN_KAMPUS_MERDEKA.COMMON",
-      "projectPath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj",
+      "projectPath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdek_02\\KN_KampusMerderkaRFID\\KN_KAMPUS_MERDEKA.COMMON\\KN_KAMPUS_MERDEKA.COMMON.csproj",
       "packagesPath": "C:\\Users\\afaja\\.nuget\\packages\\",
-      "outputPath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.COMMON\\obj\\",
+      "outputPath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdek_02\\KN_KampusMerderkaRFID\\KN_KAMPUS_MERDEKA.COMMON\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RJHpzIJeeCaVcz1g4HETh/wJNDMtSQZpMBVtfDg9o9jibLZwgg7QusstAquOmQZiVZved7QxoY1ZdYVAZaTJGg==",
+  "dgSpecHash": "FCg072RX5Q2dfhu2VX8jBgEBnQALifk+pMehpH67hfZr9i0rgSr4oYHfUjIphDwY1XTcbTDOB7cUzunAaVX4Yw==",
   "success": true,
-  "projectFilePath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdeka\\KN_KAMPUS_MERDEKA.DAL\\KN_KAMPUS_MERDEKA.DAL.csproj",
+  "projectFilePath": "D:\\KALBE\\ProjectMagang\\kn_kampus_merdek_02\\KN_KampusMerderkaRFID\\KN_KAMPUS_MERDEKA.DAL\\KN_KAMPUS_MERDEKA.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\afaja\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512",
     "C:\\Users\\afaja\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"

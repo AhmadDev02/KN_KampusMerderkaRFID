@@ -69,7 +69,6 @@ namespace KN_KAMPUS_MERDEKA.MVC
               defaults: new { controller = "Backoffice", action = "Index", id = UrlParameter.Optional }
           );
 
-
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

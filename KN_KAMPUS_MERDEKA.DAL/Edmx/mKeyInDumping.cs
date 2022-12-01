@@ -28,6 +28,5 @@ namespace KN_KAMPUS_MERDEKA.DAL.Edmx
         public Nullable<System.DateTime> dtmUpdatedDate { get; set; }
         public string txtGUID { get; set; }
         public string txtStatus { get; set; }
-        public Nullable<bool> bitStatus { get; set; }
     }
 }
