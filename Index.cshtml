@@ -1,0 +1,111 @@
+﻿
+@{ ViewBag.Title = "Dasboard";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+@using (Html.BeginForm("Index", "BIN", FormMethod.Post, new { id = "frm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("txtHiddenObject")
+    @Html.Hidden("txtGUID")}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+
+<h2 class="text-center">DASHBOARD RFID IBC</h2>
+<div class="row" id="menuTableRow">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-outline card-blue">
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-hover table-striped" id="tableMenu">
+                        <thead>
+                            <tr>
+                                <th class="text-center">LINE</th>
+                                <th class="text-center">NOMOR BO</th>
+                                <th class="text-center">NAMA PRODUK</th>
+                                <th class="text-center">DUMPING</th>    
+                                <th class="text-center">MIXING</th>
+                                <th class="text-center">QC</th>
+                                <th class="text-center">FILLING</th>
+                                <th class="text-center">WET</th>
+                                <th class="text-center">DRY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center" id="line"></td>
+                                <td class="text-center" id="nobo"></td>
+                                <td class="text-center" id="produk"></td>
+                                <td class="text-center" id="dumping"></td>
+                                <td class="text-center" id="mixing"></td>
+                                <td class="text-center" id="qc"></td>
+                                <td class="text-center" id="filling"></td>
+                                <td class="text-center" id="wet"></td>
+                                <td class="text-center" id="dry"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+<script>
+    var has_had_focus = false;
+    var wsbroker = "localhost";  //mqtt websocket enabled broker
+    var wsport = 15675; // port for above
+
+    var client = new Paho.MQTT.Client(wsbroker, wsport, "/ws",
+        "bean_scan_web_client");
+    client.topic = "bean_scan"
+    client.onConnectionLost = function (responseObject) {
+        debug("CONNECTION LOST - " + responseObject.errorMessage);
+    };
+
+    client.onMessageArrived = function (message) {
+        debug("RECEIVE ON " + message.destinationName + " PAYLOAD " + message.payloadString);
+        var data = JSON.parse(message.payloadString);
+        if (data.tag == 'E2000020340F02652020EB3C') {
+            var code2 = 'BIN 002';
+        }
+        if (data.tag == 'E2000020340F0155200086C1') {
+            var code1 = 'BIN 001'
+        }
+        if (data.ip == '10.171.50.154') {
+            data.Code = code1 || code2;
+        }
+        $("#dumping").append(`
+               <tr>
+                   <td class="text-center">
+                        <img src="/Assets/ibc/bin-active.png" width="50px" height="50px" />
+                        ${data.Code}
+                   </td>
+               </tr>
+                `);
+    }
+
+
+    var options = {
+        timeout: 3,
+        userName: 'ibc:admin',
+        password: 'admin123',
+        keepAliveInterval: 30,  
+        onSuccess: function () {
+            debug("CONNECTION SUCCESS");
+            client.subscribe("bean_scan", { qos: 1 });
+        },
+        onFailure: function (message) {
+            debug("CONNECTION FAILURE - " + message.errorMessage);    
+        }
+    };
+
+    //if (location.protocol == "https:") {
+    //    options.useSSL = true;
+    //}
+
+    function debug(log) {
+        console.log(log);
+    }
+    debug("CONNECT TO " + wsbroker + ":" + wsport);
+    client.connect(options);
+</script>
+}
+    
